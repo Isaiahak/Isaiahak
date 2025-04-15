@@ -1,0 +1,16 @@
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    background-image: url(../assets/background.gif);
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: 100% 60vh;
+}
+
+
+.welcome-container{
+    min-height: 50vh;
+}
+
