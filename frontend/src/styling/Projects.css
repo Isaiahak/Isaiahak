@@ -7,18 +7,43 @@
 
 .project-image-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     position: absolute;
     background: #141414;
-    width: 80%;
     height: 70%;
-    max-height: 50vh;
+    width: 80%;
     padding: 5%;
-    position: absolute;
-    background: #403F3F;
+    max-height: 50vh;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
+}
+
+.project-container-top{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    min-height: 40vh;
+    background: #403F3F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
+    top: 0;
+}
+
+.project-container-bottom{
+    width: 80%;
+    min-height: 10vh;
+    border-bottom-right-radius: 25px;
+    background: #403F3F;
+    border-bottom-left-radius: 25px;
+    bottom: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+
 }
 
 .project-image{
@@ -26,7 +51,7 @@
     height: 50%;
     background: #707070;
     position: relative;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 1px 5% 5% rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     left: 5%;
     padding: 5%;

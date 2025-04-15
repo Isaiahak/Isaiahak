@@ -6,7 +6,7 @@ function Projects(){
 	
 	const title = {
 		textAlign: "center",
-		fontSize: "50px",
+		fontSize: "40px",
 	}
 
 
@@ -23,17 +23,25 @@ function Projects(){
 		<>
 		<div className="project-container">
 			<h1 style={title}>Some of my current projects</h1>
-
 				<div className="project-image-container">
-					<div className="project-image">
-						<p>
-							project image goes here
-						</p>
-					</div >
-					<div className="project-description">
-						<p>
-							this is where the project discription goes
-						</p>
+					<div className="project-container-top">
+						<div className="project-image">
+							<p>
+								project image goes here
+							</p>
+						</div >
+						<div className="project-description">
+							<p>
+								this is where the project discription goes
+							</p>
+						</div>
+					</div>
+					<div className="project-container-bottom">
+						<div>
+							<p>
+								this is going to be where next and prev buttons go
+							</p>
+						</div>
 					</div>
 				</div>
 		</div>
