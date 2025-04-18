@@ -3,14 +3,16 @@
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
-    background-image: url(../assets/background.gif);
-    background-attachment: scroll;
-    background-repeat: no-repeat;
     background-size: 100% 60vh;
+    justify-content: center;
 }
-
 
 .welcome-container{
     min-height: 50vh;
 }
 
+.title{
+    text-align: center;
+    font-size: 100px;
+    padding: 10px;
+}

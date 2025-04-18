@@ -1,16 +1,22 @@
 import  {Outlet,Link} from "react-router-dom"
+import Home from "./Home.jsx"
+import Nav from "./Nav.jsx"
+import AboutMe from "./AboutMe.jsx"
+import Projects from "./Projects.jsx"
+import QuickLinks from "./QuickLinks.jsx"
 
-const  Layout = () =>{
+const  Layout = ({children}) =>{
 	return (
-		<>	
+		<div>	
 			<header>
-				<nav> </nav>
+				<Nav/>
 			</header>
-			<main>
+			<main className="content">
+				{children}	
 				<Outlet/>
 			</main>
-			<footer> shit</footer>
-		</>
+		</div>
 	)
 }
+
 export default Layout;

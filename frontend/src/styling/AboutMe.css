@@ -1,15 +1,14 @@
 .aboutme-container{
     height: 50%;
     min-height: 80vh;
-    width: 100%;
+    width: 90%;
     padding: 5%;
-    background: #141414;
-    
+    background: #141414;   
 }
+
 .description-container{
     border-radius: 25px;
     background: #110326;
-    background: linear-gradient(135deg,rgba(17, 3, 38, 1) 0%, rgba(36, 16, 59, 1) 57%, rgba(17, 3, 38, 1) 100%);
     padding: 5%;
     width: 60%;
     height: 20%;
@@ -22,3 +21,4 @@
     line-height: 2;
     font-size: 50px;
 }
+

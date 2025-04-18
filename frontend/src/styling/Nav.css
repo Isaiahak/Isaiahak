@@ -1,1 +1,36 @@
-Nav.css
+.a {
+  width: 131px;
+  height: 31px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background: linear-gradient(
+    to bottom right,
+    #110326 0%,
+    #240c4f 30%
+  );
+  background-color: #240c4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.a:hover,
+.a:focus {
+  background-color: #46237a;
+  box-shadow: 0 0 10px #46237a;
+  outline: none;
+}
+
+
+.buttons-container{
+  position: relative;
+  display: flex;
+  gap:1rem;
+  transition:.2s ease-in-out;
+  margin-left: auto;
+}
+nav{
+  margin-left: 80%;
+
+}
