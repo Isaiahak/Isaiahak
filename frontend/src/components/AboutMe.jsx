@@ -1,20 +1,30 @@
 import "../styling/AboutMe.css"
+import {useState} from "react"
 function AboutMe(){
 
 	const text = {
 		fontSize: "20px", // figurefont size stuff
 	}
+	const {currentIndex, setCurrentIndex} = useState(0)
+	
+	const aboutMeSections = ["one section aobut me as a person ","section about what i am learning and want to learn"]
+
+	const AboutMeDescriptions = () =>{
+		return(
+			<div>
+				<p>{aboutMeSections[currentIndex]}</p>
+			</div>
+		)
+	}
+
 	return(
+		<section id="about">
 		<div className="aboutme-container">
 			<div className="description-container">
-				<p style={text} className="description">
-					yooooo whats going on its your boy isiaiah and this is my website :), I move all things programming related from game dev to backend,
-					to even frontend ( jk I hated making this website). besides from programming I love rock climbing, biking, food and unfortunately video games.
-					Currently I am experimenting with Go, and Odin for backend development and systems development and Dabbling in JS for frontend ( as you can see its 
-						a work in progress)
-				</p>
+				<AboutMeDescriptions/>
 			</div>
 		</div>
+		</section>
 	)
 }
 

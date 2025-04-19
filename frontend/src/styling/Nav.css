@@ -1,9 +1,10 @@
 .a {
-  width: 131px;
+  width: 250px;
   height: 31px;
   border-radius: 15px;
   cursor: pointer;
   transition: 0.3s ease;
+  text-decoration: none;
   background: linear-gradient(
     to bottom right,
     #110326 0%,
@@ -30,7 +31,8 @@
   transition:.2s ease-in-out;
   margin-left: auto;
 }
-nav{
+
+.nav{
   margin-left: 80%;
 
 }

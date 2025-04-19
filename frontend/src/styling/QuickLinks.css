@@ -3,20 +3,24 @@
     min-height: 20vh;
 }
 
-a {
+.a {
   padding: 8px;
   background-color: #141414;
   margin: 10px;
+  text-decoration: none;
 }
 
-a:hover{
+.a:hover{
   padding: 8px;
   background-color: #141414;
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;;
 }
 
-nav{
-
+.nav{
+  place-content: center;
+  justify-content: space-between;
 }
+
+
 

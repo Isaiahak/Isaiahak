@@ -53,28 +53,30 @@ function Projects(){
 	}
 
 	return(
-		<div className="project-container">
-			<h1>Some of my previous projects</h1>
-				<div className="project-image-container">
-					<div className="project-container-top">
-						<button onClick={prevProject} className="prev-button">
-							<svg width="15" height="15" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						  	<path d="M10.5 4.5L3 12m0 0l7.5 7.5M3 12h18" strokeLinejoin="round" strokeLinecap="round"></path>
+			<section id="projects">
+			<div className="project-container">
+				<h1>Some of my previous projects</h1>
+					<div className="project-image-container">
+						<div className="project-container-top">
+							<button onClick={prevProject} className="prev-button">
+								<svg width="15" height="15" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  	<path d="M10.5 4.5L3 12m0 0l7.5 7.5M3 12h18" strokeLinejoin="round" strokeLinecap="round"></path>
+								</svg>
+							</button>
+							<ProjectImage/>	
+							<ProjectDescription/>					
+							<button onClick={nextProject} className="next-button">
+							  <svg width="15" height="15" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							  <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" strokeLinejoin="round" strokeLinecap="round"></path>
 							</svg>
-						</button>
-						<ProjectImage/>	
-						<ProjectDescription/>					
-						<button onClick={nextProject} className="next-button">
-						  <svg width="15" height="15" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						  <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" strokeLinejoin="round" strokeLinecap="round"></path>
-						</svg>
-						</button>	
+							</button>	
+						</div>
+						<div className="project-container-bottom">	
+							<ProjectIndex/>
+						</div>
 					</div>
-					<div className="project-container-bottom">	
-						<ProjectIndex/>
-					</div>
-				</div>
-		</div>
+			</div>
+		</section>
 	)
 }
 

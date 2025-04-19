@@ -8,9 +8,9 @@ function App() {
 
   return (
     <Layout>
-      <Home/>
-      <AboutMe/>
-      <Projects/>
+      <Home id="/"/>
+      <AboutMe id="/about"/>
+      <Projects id="/project"/>
       <QuickLinks/>
     </Layout>
   )
