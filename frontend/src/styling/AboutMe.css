@@ -4,12 +4,11 @@
     width: 90%;
     padding: 5%;
     background: #141414;
-}
-
-.about{
     display: flex;
     flex-direction: column;
 }
+
+
 
 .description-container{
     border-radius: 25px;
@@ -20,11 +19,40 @@
     position: absolute;
     left: 15%;
     box-shadow: inset 1px 5% 5% rgba(255, 255, 255, 0.25);
+
 }
 
 .description{
     line-height: 2;
     font-size: 50px;
 
+
+
 }
 
+.progress-bar{
+    background: #dedddc;
+    border-radius: 25px;
+    width: 80%;
+    height: 10px;
+
+}
+
+.start-component{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 0.95%;
+    height: 95%;
+}
+
+.end-component{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 0.95%;
+    height: 95%;
+}
+
+.component{
+    width: 0.95%;
+    height: 95%;
+}
