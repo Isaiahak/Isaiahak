@@ -1,6 +1,6 @@
 .quicklinks-container{
 	width: 100%;
-    min-height: 20vh;
+  min-height: 20vh;
 }
 
 .a {
@@ -18,9 +18,15 @@
 }
 
 .nav{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   place-content: center;
   justify-content: space-between;
 }
 
 
 
+.link-nav{
+  background-color: #141414;
+}

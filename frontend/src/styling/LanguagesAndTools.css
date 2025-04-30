@@ -1,10 +1,18 @@
 .image-container{
-	width : 100%;
+	width : 120%;
 	height: 50px;
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-start;
+	justify-content: left;
 	align-items: center;
 	flex-wrap: nowrap;
+	position: absolute;
+	bottom: 0%;
+	left: -160px;
+	background: #9c9998;
+	background-blend-mode: ;
+	padding-top: 3%;
+	min-height: 120px;
+	max-height: 120px;
 
 }
