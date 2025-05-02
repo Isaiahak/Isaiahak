@@ -7,11 +7,11 @@ import QuickLinks from "./QuickLinks.jsx"
 
 const  Layout = ({children}) =>{
 	return (
-		<div>	
+		<div className="content">	
 			<header>
 				<Nav/>
 			</header>
-			<main className="content">
+			<main>
 				{children}	
 				<Outlet/>
 			</main>

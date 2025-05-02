@@ -21,7 +21,7 @@ function Projects(){
 
 	const ProjectIndex = () =>{
 		return(
-			<div className="container">
+			<div className="dot-container">
 		      {project.map((item, index) => (
 		        <span key={index}  className={`item ${index === currentProject ? "highlighted-dot" : "dot"}`}></span>
 		      ))}
@@ -33,9 +33,7 @@ function Projects(){
 		var imagePath = project[currentProject][1]
 		var title = project[currentProject][0]
 		return(
-			<div className="project-image">
-				<img src={imagePath} alt={title} className="img"></img>
-			</div>
+			<img src={imagePath} alt={title} className="project-image"></img>	
 		)
 	}
 
@@ -47,34 +45,36 @@ function Projects(){
 			<div className="project-description">
 				<h1>{title}</h1>
 				<p className="description-format">{description}</p>
-				<link href={link}></link>
+				<link href={link} className="description-link"></link>
 			</div>
 		)
 	}
 
-	return(
+	return(	
 			<section id="projects">
+			<h1 className="projects-title">Some of my previous projects</h1>
+			<div className="silk-background">
+				<div class="silk-wave wave1"></div>
+			    <div class="silk-wave wave2"></div>
+			    <div class="silk-wave wave3"></div>
+			    <div class="silk-gradient"></div>
+			</div>
 			<div className="project-container">
-				<h1>Some of my previous projects</h1>
-					<div className="project-image-container">
-						<div className="project-container-top">
-							<button onClick={prevProject} className="prev-button">
-								<svg width="15" height="15" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							  	<path d="M10.5 4.5L3 12m0 0l7.5 7.5M3 12h18" strokeLinejoin="round" strokeLinecap="round"></path>
-								</svg>
-							</button>
-							<ProjectImage/>	
-							<ProjectDescription/>					
-							<button onClick={nextProject} className="next-button">
-							  <svg width="15" height="15" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							  <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" strokeLinejoin="round" strokeLinecap="round"></path>
-							</svg>
-							</button>	
-						</div>
-						<div className="project-container-bottom">	
-							<ProjectIndex/>
-						</div>
-					</div>
+				<div className="project-container-top">
+					<button onClick={prevProject} className="prev-button">
+						<svg width="15" height="15" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					  	<path d="M10.5 4.5L3 12m0 0l7.5 7.5M3 12h18" strokeLinejoin="round" strokeLinecap="round"></path>
+						</svg>
+					</button>
+					<ProjectImage/>	
+					<ProjectDescription/>					
+					<button onClick={nextProject} className="next-button">
+					  <svg width="15" height="15" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					  <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" strokeLinejoin="round" strokeLinecap="round"></path>
+					</svg>
+					</button>	
+				</div>					
+				<ProjectIndex/>				
 			</div>
 		</section>
 	)

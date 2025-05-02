@@ -8,9 +8,10 @@ import "../styling/Home.css"
 const Home = () =>{
 
 	return (
-		<div className="flex-container">
-			<div className="welcome-container">			
-				<h1 className="title">Welcome</h1>				
+		<div className="welcome">		
+			<h1 className="title">Welcome</h1>	
+			<div className="test1-container">
+				<div className="test1"></div>		
 			</div>
 		</div>
 	)

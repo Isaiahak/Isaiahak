@@ -6,15 +6,16 @@ function AboutMe(){
 	
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const [count, setCount] = useState(0)
+	const [scrollPosition, setScrollPosition] = useState(0);
 	const startTime = useRef(new Date().getMilliseconds())
 	const time = useRef(new Date().getMilliseconds())
 	const aboutMeSections = [
-		" Hello my name is Isaiah Ashton-Kenny, I am a software engineering student, with a love for all things"
-		+"software, music and outdoors. When I am not throwing myself at some new idea or struggling to learn something"
+		" Hello my name is Isaiah Ashton-Kenny, I am a software engineering student, with a love for all things\n" 
+		+"software, music and outdoors. When I am not throwing myself at some new idea or struggling to learn something\n" 
 		+"embarrassingly simple. You can find me outside running, riding my bike or climbing rocks",
 		" Currently I am sharpening my skills in full-stake development by working on [add a project with enzo]\n" 
-		+" with the focus being on becoming more familiar the dev-ops and the development lifecycle \n"
-		+" and  a game using the programming language Odin to improve performance and data oriented design \n"
+		+" with the focus being on becoming more familiar the dev-ops and the development lifecycle\n" 
+		+" and  a game using the programming language Odin to improve performance and data oriented design\n" 
 	]
 	function setCurrent(){
 		setCurrentIndex(prevIndex => prevIndex === aboutMeSections.length -1 ? 0 : prevIndex + 1)
@@ -23,6 +24,21 @@ function AboutMe(){
 	function incrementCount(){
 		setCount(prevCount => prevCount === 400 ? 0 : prevCount + 1)
 	}
+	
+	const handleScroll = () => {
+		const position =  (window.pageYOffset) / (window.innerHeight)
+		setScrollPosition(position)
+		document.documentElement.style.setProperty('--scroll', position)
+	}
+
+	useEffect(() => {
+		handleScroll()
+		window.addEventListener('scroll', handleScroll, { passive: true })
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		}
+	}, [])
+
 
 	useEffect(() => {
 		const intervalId = setInterval(() => {
@@ -56,20 +72,26 @@ function AboutMe(){
 	  );	
 	}
 
+
+
 	const AboutMeDescriptions = () =>{
 		var text = aboutMeSections[currentIndex]
 		return(
 			<div className="description-container">
 				<p className="description">{text}</p>
+				<ProgressBar/>
 			</div>
 		)
 	}
 	
 	return(
 		<section id="about">
-			<div className="aboutme-container">				
+			<div className="aboutme-container">
+				<div className="aboutme-intro-container"
+				style={{ opacity: scrollPosition}}>
+					<h1 className="aboutme-intro">Here's a little bit about me</h1>		
+				</div>
 				<AboutMeDescriptions/>
-				<ProgressBar/>
 				<LanguagesAndTools/>
 			</div>	
 		</section>

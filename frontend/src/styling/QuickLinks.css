@@ -1,32 +1,35 @@
 .quicklinks-container{
-	width: 100%;
-  min-height: 20vh;
+  width: 100%;
+  margin-inline: auto;
+  background-color: #0f0f0f;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.a {
+.ql-nav{
+  width: 100rem;
+  background-color: #141414;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-self: center;
+  margin-inline: auto;
+  padding-right: 70rem;
+}
+
+.quicklink-title{
+  text-align: center;
+  align-self: center;
+  font-size: 2rem;
+}
+
+.links {
   padding: 8px;
   background-color: #141414;
   margin: 10px;
   text-decoration: none;
-}
-
-.a:hover{
-  padding: 8px;
-  background-color: #141414;
-  margin: 10px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;;
-}
-
-.nav{
+  border-radius: 10px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  place-content: center;
-  justify-content: space-between;
-}
-
-
-
-.link-nav{
-  background-color: #141414;
+  flex-direction: column;
 }
