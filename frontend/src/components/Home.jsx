@@ -8,10 +8,15 @@ import "../styling/Home.css"
 const Home = () =>{
 
 	return (
-		<div className="welcome">		
+		<div className="home-container">
+			<div className="project-background">
+				<div className="project-background-side"></div>
+				<div className="project-background-center"></div>
+				<div className="project-background-side"></div>	
+			</div>		
 			<h1 className="title">Welcome</h1>	
-			<div className="test1-container">
-				<div className="test1"></div>		
+			<div className="images-container">
+				<div className="images"></div>		
 			</div>
 		</div>
 	)

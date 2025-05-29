@@ -1,4 +1,6 @@
 :root {
+  width: 100rem;
+  margin-inline: auto;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -11,6 +13,11 @@
   -ms-overflow-style: none;  
   scrollbar-width: none;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}  
 
 -webkit-scrollbar {
   display: none;
