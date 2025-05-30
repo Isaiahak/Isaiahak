@@ -1,12 +1,10 @@
 .aboutme-container{
     width: 100%;
     margin: 30rem auto;
-    background-color: #0f0f0f;
     display: flex;
     flex-direction: column;
     position: relative;
     align-self: center;
-    visibility: hidden;
 }
 
 .description-container{

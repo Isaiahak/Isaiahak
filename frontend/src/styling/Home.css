@@ -1,8 +1,7 @@
 .home-container{
     position: relative;
     width: 100%;
-    height: 5rem;
-    margin-top: 3rem;
+    height: 50rem;
     margin-inline: auto;
 }
 
@@ -26,68 +25,45 @@
 }
 
 .project-background-side{
-    width: auto;
+    width: 100%;
     height: 100%;
     background-color: #0f0f0f;
 }
-
-
-.images-container{
+.image-background{
     position: absolute;
-    height: 100%;
     width: 100%;
+    height: 100%;
     margin-inline: auto;
-    display: flex;
-    flex-direction: row;
-    align-items:center;
-    justify-content: center;
+    z-index: 3;
     overflow: hidden;
-    z-index: 1;
+    visibility: hidden;
 }
 
 .images {
+    height: 40rem;
+    width: 80rem;
     position: absolute;
-    height: 10rem;
-    width: 100rem;
-    bottom: 0;
-    text-align: center;
+    border-radius: 50% 50%;
     align-self: center;
+    opacity: 0.5;
     filter: blur(30px);
-    z-index: 1;
 }
 
-.images::before {
-    content: '';
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    transform: translate(90%, -250%);
-    background: #742b94;
+.first{
+    transform: translate(90%, -45%);
     background: linear-gradient(98deg,rgba(116, 43, 148, 1) 0%, rgba(92, 30, 125, 1) 50%, rgba(33, 7, 46, 1) 100%);
-    visibility: visible;
-    align-self: center;
-    opacity: 0.5;
 }
-
-.images::after {
-    content: '';
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    background: #411C57;
-    transform: translate(-90%, -100%);
-    background: linear-gradient(90deg,rgba(65, 28, 87, 1) 0%, rgba(71, 33, 92, 1) 50%, rgba(112, 104, 166, 1) 100%);
-    z-index: -1;
-    visibility: visible;
-    align-self: center;
-    opacity: 0.5;
+.second{
+    transform: translate(-90%, -25%);
+    background: linear-gradient(90deg,rgba(65, 28, 87, 1) 0%, rgba(71, 33, 92, 1) 50%, rgba(112, 104, 166, 1) 100%);  
 }
 
 .title{
     align-self: center;
     text-anchor: middle;
     font-size: 5rem;
-    padding: 10px;
+    padding: 10rem;
     visibility: visible;
-    margin: 3rem auto;
+    z-index: 5;
+
 }

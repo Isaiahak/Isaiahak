@@ -60,9 +60,9 @@ function Projects(){
 					<div className="project-background-side"></div>	
 				</div>	
 				<div className="silk-background">
-					<div class="silk-wave wave1"></div>
-				    <div class="silk-wave wave2"></div>
-				    <div class="silk-wave wave3"></div>
+					<div className="silk-wave wave1"></div>
+				    <div className="silk-wave wave2"></div>
+				    <div className="silk-wave wave3"></div>
 				</div>
 				<div className="project-container">
 					<div className="project-container-top">
