@@ -1,5 +1,5 @@
 .nav-container{
-  width: 100%;
+  width: 100vw;
   height: 4rem;
   margin-inline: auto;
   background-color: #3a1a63;
@@ -7,15 +7,16 @@
   flex-direction: row;
 }
 
+.main-nav-container{
+  width: 75%;
+}
+
 .buttons-container{
-  max-width: 100rem;
   display: flex;
   gap:1rem;
   transition:.2s ease-in-out;
   align-self: center;
   background-color: #3a1a63;
-  margin-inline: auto;
-  padding-left: 80%;
 }
 
 .nav-button {
@@ -34,14 +35,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-inline: 0.5rem;
 }
 
 .nav-button:hover,
 .nav-button:focus {
+  transform: translateY(-0.25rem);
+  transition-duration: 200;
   background-color: #46237a;
   box-shadow: 0 0 10px #46237a;
   outline: none;

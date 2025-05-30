@@ -1,11 +1,11 @@
 .home-container{
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 50rem;
     margin-inline: auto;
 }
 
-.project-background{
+.home-background{
     position: absolute;
     height: 100%;
     width: 100%;
@@ -17,15 +17,14 @@
     z-index: 4;
 }
 
-.project-background-center{
-    width: 100%;
+.home-background-center{
+    width: fit-content;
     height: 100%;
-    margin-inline: auto;
     visibility: hidden;
 }
 
-.project-background-side{
-    width: 100%;
+.home-background-side{
+    width: fit-content;
     height: 100%;
     background-color: #0f0f0f;
 }

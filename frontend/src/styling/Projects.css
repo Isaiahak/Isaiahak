@@ -1,7 +1,7 @@
 .main-container{
     position: relative;
-    height: 100%;
-    width: 40rem;
+    width: 100vw;
+    height: 38rem;
     margin-inline: auto;
 }
 
@@ -18,14 +18,13 @@
 }
 
 .project-background-center{
-    width: 100%;
+    width: fit-content;
     height: 100%;
-    margin-inline: auto;
     visibility: hidden;
 }
 
 .project-background-side{
-    width: auto;
+    width: fit-content;
     height: 100%;
     background-color: #0f0f0f;
 }
@@ -58,33 +57,48 @@
     justify-content: center;
     align-items: center;
     visibility: hidden;
+    gap: 1rem;
 }
 
-.project-container-bottom{;
-    height: 0.5rem;
-    background: #0f0f0f;
+.project-image-container{
+    height: 30rem;
+    width: 50rem; 
+    background: #080808;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 10px;
     visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-image{
-    max-width: 35rem;
-    height: 25rem;
-    background: #080808;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    max-height: 25rem; 
+    border-radius: 0.75rem;
+}
+
+.project-description-container{
+    height: auto;
+    width: 80%;
+    background-color: #141414;
+    align-self: center;
+    justify-self: center;
     border-radius: 10px;
-    margin-inline: 5% 5%;
-    visibility: visible;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+
 }
 
 .project-description{
-    width: 40rem;
-    height: 25rem;
+    height: 20rem;
+    width: 25rem;
     background: #080808;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     border-radius: 10px;
-    margin-inline: 5% 5%;
     visibility: visible;
 }
+
 .description-link{
     visibility: visible;
 }
@@ -151,11 +165,11 @@
 
 
 
-.description{
+.description-text{
     height: 80%;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    text-wrap: wrap;
     white-space: pre-line;
-    margin-inline: auto;
 }
 
 .silk-background {

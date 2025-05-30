@@ -5,6 +5,7 @@ import {useState} from 'react'
 
 function Projects(){
 	const [currentProject, setCurrentProject] = useState(1);
+	const [isOpen,setIsOpen] = useState(false)
 	
 	var project = [
 		["BidlyAuctions",BidlyAuctions,"BidlyAuctions is a full-stack auction-based e-commerce platform designed to facilitate online bidding in two formats: Forward Auctions and Dutch Auctions. Built with a layered architecture using modern web framework","BidlyAuctions link"],
@@ -32,19 +33,32 @@ function Projects(){
 	const ProjectImage = () =>{
 		var imagePath = project[currentProject][1]
 		var title = project[currentProject][0]
+
+		const handleHover = () =>{
+			setIsOpen(true)
+		}
+
 		return(
-			<img src={imagePath} alt={title} className="project-image"></img>	
+			<div className="project-image-container">
+				<img src={imagePath} alt={title} className="project-image"></img>
+			</div>	
 		)
 	}
 
-	const ProjectDescription = () =>{
+	const ProjectDescription = ({isOpen, onClose}) =>{
 		var title = project[currentProject][0]
 		var description = project[currentProject][2]
 		var link = project[currentProject][3]
+		if(!isOpen){
+			return null
+		}
 		return(
 			<div className="project-description">
+				<div className="project-description-exit" onClick={onClose}>X</div>
 				<h1>{title}</h1>
-				<p className="description">{description}</p>
+				<div className="project-description-container">
+					<p className="description-text">{description}</p>
+				</div>
 				<link href={link} className="description-link"></link>
 			</div>
 		)
@@ -72,7 +86,7 @@ function Projects(){
 							</svg>
 						</button>
 						<ProjectImage/>	
-						<ProjectDescription/>					
+						<ProjectDescription isOpen={isOpen} onClose={()=>setIsOpen(false)}/>					
 						<button onClick={nextProject} className="next-button">
 						  <svg width="15" height="15" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						  <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" strokeLinejoin="round" strokeLinecap="round"></path>

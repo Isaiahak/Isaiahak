@@ -5,6 +5,7 @@ const Nav = () =>{
 
 	return(
 		<nav className="nav-container">
+			<div className="main-nav-container"></div>
 			<div className="buttons-container">
 				<a href="#about" className="nav-button">About</a>
 				<a href="#projects" className="nav-button">Projects</a>
