@@ -1,5 +1,0 @@
-
-
-const AboutMe () -> {
-	
-}

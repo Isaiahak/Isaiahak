@@ -9,23 +9,17 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    margin-inline: auto;
     display: flex;
-    flex-direction: row;
-    align-items:center;
-    justify-content: center;
     z-index: 4;
 }
 
 .project-background-center{
-    width: fit-content;
-    height: 100%;
+    flex: 0 0 100rem;
     visibility: hidden;
 }
 
 .project-background-side{
-    width: fit-content;
-    height: 100%;
+    flex: 1;
     background-color: #0f0f0f;
 }
 
@@ -55,18 +49,40 @@
     height: 30rem;
     background: #0f0f0f; 
     justify-content: center;
-    align-items: center;
     visibility: hidden;
     gap: 1rem;
 }
 
-.project-image-container{
+.project-image-outer-border{
+    position: relative;
     height: 30rem;
-    width: 50rem; 
-    background: #080808;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    border-radius: 10px;
+    width: 50rem;
     visibility: visible;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    overflow: clip;
+    border: 2px solid #080808;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.project-image-rotation{
+    position: absolute;
+    top: -30%;
+    height: 80rem;
+    width: 80rem;
+    background: linear-gradient(125deg, #ff7eb9, #8c54ff, #5ce1e6);
+    animation: drift linear infinite;
+    animation-duration: 10s;
+    z-index: -1;
+}
+
+.project-image-container{
+    height: 99%;
+    width: 99%; 
+    background: #080808;
+    border-radius: 17px;
+    align-self: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,6 +91,22 @@
 .project-image{
     max-height: 25rem; 
     border-radius: 0.75rem;
+}
+
+.project-description{
+    position: relative;
+    top: 0%;
+    left: 0%;
+    height: 30rem;
+    width: 30rem;
+    background: #080808;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 10px;
+    visibility: visible;
+    z-index: 5;
+    opacity: 0.85;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-description-container{
@@ -86,21 +118,70 @@
     border-radius: 10px;
     padding-top: 1rem;
     padding-bottom: 1rem;
-
-
-}
-
-.project-description{
-    height: 20rem;
-    width: 25rem;
-    background: #080808;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    border-radius: 10px;
-    visibility: visible;
 }
 
 .description-link{
+    font-size: 2rem;
     visibility: visible;
+}
+
+.description-text{
+    height: 80%;
+    font-size: 1rem;
+    text-wrap: wrap;
+    white-space: pre-line;
+    align-self: center;
+    justify-self: center;
+}
+
+.languages-and-tools-container{
+    width: 80%;
+    align-self: center;
+    justify-self: center;
+    border-radius: 10px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.languages-and-tools-border{
+    position: relative;
+    visibility: visible;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    overflow: clip;
+    border: 2px solid #080808;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.languages-and-tools-border:hover{
+    transform: scale(1.15);
+    transition: transform 0.35s ease;
+}
+
+.languages-and-tools-rotation{
+    position: absolute;
+    top: -30%;
+    height: 15rem;
+    width: 15rem;
+    background: linear-gradient(125deg, #ff7eb9, #8c54ff, #5ce1e6);
+    animation: drift linear infinite;
+    animation-duration: 5s;
+    z-index: -1;
+}
+
+.languages-and-tools{
+    padding-inline: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    margin: 0.18rem;
+    font-size: 0.75rem;
+    background-color: #141414;
+    border-radius: 10px;
 }
 
 .prev-button {
@@ -150,7 +231,8 @@
     background: #707070;
     border-radius: 50%;
     display: inline-block;
-    margin: 5px;
+    margin-top: 1rem;
+    margin-inline: 0.5rem;
 }
 
 .highlighted-dot{
@@ -159,18 +241,13 @@
     background: #DEDEDE;
     border-radius: 50%;
     display: inline-block;
-    margin: 5px;
+    margin-top: 1rem;
+    margin-inline: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 
 
-.description-text{
-    height: 80%;
-    font-size: 1rem;
-    text-wrap: wrap;
-    white-space: pre-line;
-}
 
 .silk-background {
     position: absolute;
@@ -215,7 +292,6 @@
     opacity: 0.5;
     visibility: visible;
 }
-
 
 @keyframes drift {
   from {
