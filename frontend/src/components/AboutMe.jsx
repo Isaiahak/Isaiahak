@@ -30,7 +30,7 @@ function AboutMe(){
 		setScrollPosition(position)
 		document.documentElement.style.setProperty('--scroll', position)
 	}
-
+	/*
 	useEffect(() => {
 		handleScroll()
 		window.addEventListener('scroll', handleScroll, { passive: true })
@@ -62,6 +62,7 @@ function AboutMe(){
 		}
 	},[count])
 
+	*/
 	const ProgressBar = () =>{
 		return (
 	    <div className="progress-bar">
@@ -73,13 +74,15 @@ function AboutMe(){
 	}
 
 
-
 	const AboutMeDescriptions = () =>{
 		var text = aboutMeSections[currentIndex]
 		return(
-			<div className="description-container">
-				<p className="description">{text}</p>
-				<ProgressBar/>
+			<div className="main-description-container">
+				<div className="description-image-container">Image</div>
+				<div className="description-container">
+					<p className="description">{text}</p>
+					<ProgressBar/>
+				</div>
 			</div>
 		)
 	}
@@ -91,8 +94,10 @@ function AboutMe(){
 				style={{ opacity: scrollPosition}}>
 					<h1 className="aboutme-intro">Here's a little bit about me</h1>		
 				</div>
+				<div className="aboutme-main-container">	
 				<AboutMeDescriptions/>
 				<LanguagesAndTools/>
+				</div>
 			</div>	
 		</section>
 	)

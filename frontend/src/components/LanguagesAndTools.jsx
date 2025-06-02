@@ -83,7 +83,7 @@ function LanguagesAndTools (){
 
 
 	return(
-		<div>
+		<div className="landt-container">
 			<h1 className="landt-title">Some tools/languages I am getting familiar with </h1>		
 			<div style={{ transform: `translateX(${shiftAmount}px)` }}
 	            className="image-container">
