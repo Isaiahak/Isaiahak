@@ -55,11 +55,11 @@ function Projects(){
 	useEffect(() =>{
 		const intervalId = setInterval(() => {
 			time.current = new Date().getSeconds()
-			if (time.current < 5){
+			if (time.current < 3){
 				startTime.current = new Date().getSeconds()
 			}
 			var diff = time.current - startTime.current
-			if(diff >= 5){
+			if(diff >= 3){
 				handleProjectImageChange()
 				startTime.current = time.current
 			}
