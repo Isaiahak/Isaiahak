@@ -5,24 +5,20 @@ import {useState, useEffect, useRef} from "react"
 function AboutMe(){
 	
 	const [currentIndex, setCurrentIndex] = useState(0)
-	const [count, setCount] = useState(0)
-	const [scrollPosition, setScrollPosition] = useState(0);
-	const startTime = useRef(new Date().getMilliseconds())
-	const time = useRef(new Date().getMilliseconds())
+	const [scrollPosition, setScrollPosition] = useState(0)
+	const startTime = useRef(new Date().getSeconds())
+	const time = useRef(new Date().getSeconds())
 	const aboutMeSections = [
-		" Hello my name is Isaiah Ashton-Kenny, I am a software engineering student, with a love for all things\n" 
-		+"software, music and outdoors. When I am not throwing myself at some new idea or struggling to learn something\n" 
-		+"embarrassingly simple. You can find me outside running, riding my bike or climbing rocks",
-		" Currently I am sharpening my skills in full-stake development by working on [add a project with enzo]\n" 
-		+" with the focus being on becoming more familiar the dev-ops and the development lifecycle\n" 
-		+" and  a game using the programming language Odin to improve performance and data oriented design\n" 
+		" Hello my name is Isaiah Ashton-Kenny, I am a software engineering student learning full-stack development.",
+		"When I am not programming, You can find me outside running, riding my bike or climbing rocks",
+		" Currently I tackling full-stack development by working on a set of online party games\n" 
+		+" to be hosted online for my friends to play!\n" 
 	]
+
+	const aboutMeSectionImages = ["image1","image2","image3"]
+
 	function setCurrent(){
 		setCurrentIndex(prevIndex => prevIndex === aboutMeSections.length -1 ? 0 : prevIndex + 1)
-	}
-	
-	function incrementCount(){
-		setCount(prevCount => prevCount === 400 ? 0 : prevCount + 1)
 	}
 	
 	const handleScroll = () => {
@@ -38,47 +34,38 @@ function AboutMe(){
 			window.removeEventListener('scroll', handleScroll);
 		}
 	}, [])
-
-
+	*/
 	useEffect(() => {
 		const intervalId = setInterval(() => {
-			time.current = new Date().getMilliseconds()
-			if (time.current < 25){
-				startTime.current = new Date().getMilliseconds()
+			time.current = new Date().getSeconds()
+			if (time.current < 5){
+				startTime.current = new Date().getSeconds()
 			}
 			var diff = time.current - startTime.current
-			if(diff >= 25){
-				incrementCount()
+			if(diff >= 5){
+				setCurrent()
 				startTime.current = time.current
 			}
-		}, 1)
+		}, 1000)
 		return () => clearInterval(intervalId)
-	},[count]);
+	},[]);
 
-	useEffect(() => {
-		if(count == 400){
-			setCurrent()
-			setCount(0)
-		}
-	},[count])
-
-	*/
+	
 	const ProgressBar = () =>{
 		return (
-	    <div className="progress-bar">
-	      {[...Array(count)].map((_, i) => (
-	        <span key={i} className={`item ${ i ===0 && i >= count - 1 ? "start-end-component" : i === 0 ? "start-component" : i === count - 1 ? "end-component": "component"}`}></span>
-	      ))}
-	    </div>
-	  );	
+	    <div className="progress-bar"/>
+	  )	
 	}
 
 
 	const AboutMeDescriptions = () =>{
 		var text = aboutMeSections[currentIndex]
+		var image = aboutMeSectionImages[currentIndex]
 		return(
 			<div className="main-description-container">
-				<div className="description-image-container">Image</div>
+				<div className="description-image-container">
+					<h1 className="description-image-placeholder">{image}</h1>
+				</div>
 				<div className="description-container">
 					<p className="description">{text}</p>
 					<ProgressBar/>

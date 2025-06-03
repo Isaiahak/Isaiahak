@@ -1,27 +1,26 @@
 import "../styling/Projects.css"
 import Flicks from "../assets/Flicks.jpg"
+import FlicksSearchPage from "../assets/FlickSearchPage.png"
+import FlicksMoviePage from "../assets/FlicksMoviePage.png"
 import BidlyAuctions from "../assets/BidlyAuctionsMain.jpg"
-import {useState, useEffect} from 'react'
+import BidlyAuctionPage from "../assets/BidlyAuctions.jpg"
+import PartyGames from "../assets/PartyGames.png"
+import PartyGamesLobbies from "../assets/PartyGamesLobbies.png"
+import PartyGamesLobby from "../assets/PartyGamesLobby.png"
+import {useState, useEffect, useRef} from 'react'
 
 function Projects(){
-	const [currentProject, setCurrentProject] = useState(1);
+	const [currentProject, setCurrentProject] = useState(0)
+	const [currentProjectImage, setCurrentProjectImage] = useState(0)
 	const [isOpen,setIsOpen] = useState(false)
 	const [flexState, setFlexState] = useState('center')
+	const startTime = useRef(new Date().getSeconds())
+	const time = useRef(new Date().getSeconds())
 	
-	useEffect(() =>{
-		if(isOpen){
-			setFlexState('flex-start')
-		}else{
-			setFlexState('center')
-		}
-	}
-	,[isOpen])
-	
-	var project = [
-		["BidlyAuctions",BidlyAuctions,"BidlyAuctions is a full-stack auction-based e-commerce platform designed to facilitate online bidding in two formats: Forward Auctions and Dutch Auctions. Built with a layered architecture using modern web framework","BidlyAuctions link",["SpringBoot","HTML","CSS","JAVA","DOCKER","Rabbitmq","Kubernetes","Postgresql","JUnit"]],
-		["Flicks",Flicks,"Flicks is a personalized movie recommendation website that helps users discover films tailored to their unique tastes. It combines user preferences and AI to generate smart, adaptive recommendations that improve over time. ","https://flicks-frontend-production.up.railway.app/",["React","JS","HTML","CSS","Python","POSTMAN","Docker","MongoDB","Railways"]],
-	]
 
+	const handleProjectImageChange = () => {
+		setCurrentProjectImage(currentProjectImage === moreProjectImages[currentProject].length - 1 ? 0 : currentProjectImage + 1)
+	}
 	function nextProject(){
 			setCurrentProject( currentProject === project.length - 1? 0 : currentProject + 1 )
 			setIsOpen(false)
@@ -30,6 +29,53 @@ function Projects(){
 	function prevProject(){
 			setCurrentProject( currentProject === 0 ? project.length - 1 : currentProject - 1 )
 			setIsOpen(false)
+	}
+
+	var project = [
+		["BidlyAuctions",BidlyAuctions,"BidlyAuctions is a full-stack auction-based e-commerce platform designed to facilitate online bidding in two formats: Forward Auctions and Dutch Auctions. Built with a layered architecture using modern web framework","BidlyAuctions link",["SpringBoot","HTML","CSS","JAVA","DOCKER","Rabbitmq","Kubernetes","Postgresql","JUnit"]],
+		["Flicks",Flicks,"Flicks is a personalized movie recommendation website that helps users discover films tailored to their unique tastes. It combines user preferences and AI to generate smart, adaptive recommendations that improve over time. ","https://flicks-frontend-production.up.railway.app/",["React","JS","HTML","CSS","Python","POSTMAN","Docker","MongoDB","Railways"]],
+		["PartyGames",PartyGames,"Party Games is the temporary name for my online library of parties game for friends, add more later.","Party Games link",["React","JS","HTML","CSS","Python","Go","POSTMAN","Docker"]],
+	]
+
+	var moreProjectImages = [
+		[BidlyAuctions,BidlyAuctionPage],
+		[Flicks,FlicksSearchPage,FlicksMoviePage],
+		[PartyGames,PartyGamesLobby,PartyGamesLobbies],
+	]
+
+	useEffect(() =>{
+		if(isOpen){
+			setFlexState('flex-start')
+		}else{
+			setFlexState('center')
+		}
+	}
+	,[isOpen])
+
+	useEffect(() =>{
+		const intervalId = setInterval(() => {
+			time.current = new Date().getSeconds()
+			if (time.current < 5){
+				startTime.current = new Date().getSeconds()
+			}
+			var diff = time.current - startTime.current
+			if(diff >= 5){
+				handleProjectImageChange()
+				startTime.current = time.current
+			}
+		}, 1000)
+		return () => clearInterval(intervalId)
+	},[currentProjectImage])
+
+	const ProjectImages = () => {
+		var currentImage = moreProjectImages[currentProject][currentProjectImage]
+		var title = project[currentProject][0]
+
+		return(
+			<div className="project-image-container">
+				<img src={currentImage} alt={title} className="project-image"/>
+			</div>
+		)
 	}
 
 	const ProjectIndex = () =>{
@@ -42,18 +88,37 @@ function Projects(){
 		)
 	}
 
+	const MainImage = () =>{
+		var imagePath = project[currentProject][1]
+		var title = project[currentProject][0]
+		return(
+			<div className="project-image-container">
+				<img src={imagePath} alt={title} className="project-image" onMouseOver={() => setIsOpen(true)}></img>
+			</div>
+		)
+			
+	}
+
 	const ProjectImage = () =>{
 		var imagePath = project[currentProject][1]
 		var title = project[currentProject][0]
-
-		return(
+		if (isOpen){
+			return(
 			<div className="project-image-outer-border">
 				<div className="project-image-rotation"></div>
-				<div className="project-image-container">
-					<img src={imagePath} alt={title} className="project-image" onMouseOver={() => setIsOpen(true)}></img>
-				</div>	
+				<ProjectImages/>
 			</div>
-		)
+			)
+		}
+		else{
+			return(
+			<div className="project-image-outer-border">
+				<div className="project-image-rotation"></div>
+				<MainImage/>
+			</div>
+			)
+		}
+		
 	}
 
 	const LanguagesAndTools = () =>{

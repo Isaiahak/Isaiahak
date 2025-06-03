@@ -1,29 +1,30 @@
 .landt-container{
-	background-color: #1a1a1a;
+	position: relative;
 	width: 90%;
 	height: 40%;
 	display: flex;
 	flex-direction: column;
 	overflow: clip;
 	align-self: center;
+	justify-self: center;
 	gap: 1rem;
 	border-radius: 25px;
 	margin-top: 5%;
+	background:  #1a1a1a;
 }
 
 .image-container{
-	position: absolute;
-	bottom: 5%;
-	left: -200%;
-	width: 100%;
+	position: relative;
+	width: 200%;
+	left: -30%;
+	align-self: flex-start;
 	max-height: 2rem;
 	display: flex;
 	flex-direction: row;
-	justify-content: left;
+	justify-content: flex-start;
+	justify-items: center;
 	align-items: center;
 	flex-wrap: nowrap;
-	background: #0f0f0f;
-	padding-top: 5rem;
 	opacity: 0.75;
 	visibility: visible;
 }
@@ -32,6 +33,7 @@
 	width: 100%;
 	max-width: 160px;
 	max-height: 160px;
+
 }
 
 .landt-title{

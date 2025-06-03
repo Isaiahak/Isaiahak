@@ -89,7 +89,8 @@
 }
 
 .project-image{
-    max-height: 25rem; 
+    max-height: 80%;
+    max-width: 80%; 
     border-radius: 0.75rem;
 }
 
@@ -189,7 +190,7 @@
     transition: all 0.3s linear;
     border-radius: 50%;
     border: 1px solid #0f0f0f;
-    padding: 10px;
+    padding: 20px;
     visibility: visible;
 }
 
@@ -198,7 +199,7 @@
     transition: all 0.3s linear;
     border-radius: 50%;
     border: 1px solid #0f0f0f;
-    padding: 10px;
+    padding: 20px;
     visibility: visible;
 }
 
@@ -208,7 +209,7 @@
 }
 
 .prev-button:hover {
-  box-shadow: 0px 0px 40px #4F4E4E;
+  background: linear-gradient(125deg, #ff7eb9, #8c54ff, #5ce1e6);
 }
 
 .next-button > svg {
@@ -218,7 +219,7 @@
 
 
 .next-button:hover {
-  box-shadow: 0px 0px 40px #4F4E4E;
+  background: linear-gradient(125deg, #ff7eb9, #8c54ff, #5ce1e6);
 }
 
 .dot-container{
