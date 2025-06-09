@@ -13,7 +13,7 @@ function Projects(){
 	const [currentProject, setCurrentProject] = useState(0)
 	const [currentProjectImage, setCurrentProjectImage] = useState(0)
 	const [isOpen,setIsOpen] = useState(false)
-	const [flexState, setFlexState] = useState('center')
+	const [mainPageState, setMainPageState] = useState('translation')
 	const startTime = useRef(new Date().getSeconds())
 	const time = useRef(new Date().getSeconds())
 	
@@ -45,9 +45,10 @@ function Projects(){
 
 	useEffect(() =>{
 		if(isOpen){
-			setFlexState('flex-start')
+			// instead of an instant flex state change i want to do a transform into the flex change
+			setMainPageState('translation')
 		}else{
-			setFlexState('center')
+			setMainPageState('translation-reverse')
 		}
 	}
 	,[isOpen])
@@ -55,17 +56,17 @@ function Projects(){
 	useEffect(() =>{
 		const intervalId = setInterval(() => {
 			time.current = new Date().getSeconds()
-			if (time.current < 3){
+			if (time.current < 5){
 				startTime.current = new Date().getSeconds()
 			}
 			var diff = time.current - startTime.current
-			if(diff >= 3){
+			if(diff >= 5){
 				handleProjectImageChange()
 				startTime.current = time.current
 			}
 		}, 1000)
 		return () => clearInterval(intervalId)
-	},[currentProjectImage])
+	},[currentProjectImage,handleProjectImageChange])
 
 	const ProjectImages = () => {
 		var currentImage = moreProjectImages[currentProject][currentProjectImage]
@@ -100,8 +101,6 @@ function Projects(){
 	}
 
 	const ProjectImage = () =>{
-		var imagePath = project[currentProject][1]
-		var title = project[currentProject][0]
 		if (isOpen){
 			return(
 			<div className="project-image-outer-border">
@@ -192,7 +191,7 @@ function Projects(){
 				    <div className="silk-wave wave3"></div>
 				</div>
 				<div className="project-container">
-					<div className="project-container-top" style={{ alignItems: `${flexState}`}}  onMouseLeave={() => setIsOpen(false)}>
+					<div className=`{}` onMouseLeave={() => setIsOpen(false)}>
 						<PreviousButton isOpen={isOpen}/>
 						<ProjectDescription isOpen={isOpen}/>
 						<ProjectImage/>						

@@ -51,7 +51,18 @@
     justify-content: center;
     visibility: hidden;
     gap: 1rem;
+    align-items: center;
 }
+
+.translation{
+    transition: margin-inline 0.5s ease;
+    margin-inline: 0%;
+}
+.translation-reverse{
+    transition: margin-inline 0.5s ease;
+    margin-inline: auto;
+}
+
 
 .project-image-outer-border{
     position: relative;
