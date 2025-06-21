@@ -1,4 +1,4 @@
-import "../styling/QuickLinks.css"
+        import "../styling/QuickLinks.css"
 function QuickLinks(){
 
 
@@ -9,7 +9,7 @@ function QuickLinks(){
 			<nav className="ql-nav">
 				<a href="https://github.com/Isaiahak" className="links">Github</a>
 				<a href="https://www.linkedin.com/in/isaiah-ashton-kenny" className="links">LinkedIn</a>
-				<a href="./assets/IsaiahAshtonKennyCurrentResume.pdf" className="links" download="IsaiahAshtonKennyCurrentResume.pdf">Download Resume</a>
+				<a href="/IsaiahAshtonKennyCurrentResume.pdf" className="links" download>Download Resume</a>
 			</nav> 
 
 		)

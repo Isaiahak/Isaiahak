@@ -2,7 +2,7 @@
     width: 100vw;
     margin-inline: auto;
     position: relative;
-    height: 50rem;
+    height: 60rem;
     background: #0F0F0F;
     background: linear-gradient(180deg,rgba(15, 15, 15, 1) 0%, rgba(17, 3, 38, 1) 16%, rgba(17, 3, 38, 1) 84%, rgba(15, 15, 15, 1) 100%);
 }
@@ -37,22 +37,38 @@
     width: 36%;  
     height: 100%;
     background-color: #1a1a1a;
-    border-radius: 25px;
+    border: solid;
+    border-color: grey;
+    border-radius: 10px;
 }
+
+.description-image-container:hover{
+    border-color: white;
+}
+
 
 .description-image-placeholder{
     text-align: center;
-    text-justify: center;
     font-size: 3rem;
 }
 
 .description-container{
     width: 66%;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 10px;
     background: #1a1a1a;
     display: flex;
     flex-direction: column;
+    border: solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-color: grey;
+}
+
+.description-container:hover{
+    border-color: white;
 }
 
 .description{
@@ -74,9 +90,9 @@
 
 .progress-bar{
     bottom: 0%;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    height: 0.5rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 0.75rem;
     align-self: flex-start;
     animation: progress-bar 5s linear 0s 1;
     flex-grow: 0;

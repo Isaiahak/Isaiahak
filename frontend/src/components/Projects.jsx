@@ -16,11 +16,7 @@ function Projects(){
 	const [mainPageState, setMainPageState] = useState('translation')
 	const startTime = useRef(new Date().getSeconds())
 	const time = useRef(new Date().getSeconds())
-	
 
-	const handleProjectImageChange = () => {
-		setCurrentProjectImage(currentProjectImage === moreProjectImages[currentProject].length - 1 ? 0 : currentProjectImage + 1)
-	}
 	function nextProject(){
 			setCurrentProject( currentProject === project.length - 1? 0 : currentProject + 1 )
 			setIsOpen(false)
@@ -54,6 +50,10 @@ function Projects(){
 	,[isOpen])
 
 	useEffect(() =>{
+		function handleProjectImageChange(){
+			setCurrentProjectImage(currentProjectImage === moreProjectImages[currentProject].length - 1 ? 0 : currentProjectImage + 1)
+		}
+
 		const intervalId = setInterval(() => {
 			time.current = new Date().getSeconds()
 			if (time.current < 5){
@@ -66,7 +66,14 @@ function Projects(){
 			}
 		}, 1000)
 		return () => clearInterval(intervalId)
-	},[currentProjectImage,handleProjectImageChange])
+	},[currentProjectImage,currentProject,moreProjectImages])
+
+	const handleMouseLeave = (e) => {
+		const target = e.relatedTarget
+		if (target instanceof Node && !e.currentTarget.contains(e.relatedTarget)) {
+            setIsOpen(false)
+        }		
+	}
 
 	const ProjectImages = () => {
 		var currentImage = moreProjectImages[currentProject][currentProjectImage]
@@ -179,25 +186,29 @@ function Projects(){
 	return(	
 		<section id="projects">
 			<h1 className="projects-title">Some of my previous projects</h1>
-			<div className="main-container">
-				<div className="project-background">
-					<div className="project-background-side"></div>
-					<div className="project-background-center"></div>
-					<div className="project-background-side"></div>	
-				</div>	
-				<div className="silk-background">
-					<div className="silk-wave wave1"></div>
-				    <div className="silk-wave wave2"></div>
-				    <div className="silk-wave wave3"></div>
-				</div>
-				<div className="project-container">
-					<div className=`{}` onMouseLeave={() => setIsOpen(false)}>
-						<PreviousButton isOpen={isOpen}/>
-						<ProjectDescription isOpen={isOpen}/>
-						<ProjectImage/>						
-						<NextButton isOpen={isOpen}/>	
-					</div>					
-					<ProjectIndex/>				
+			<div className="main-container" >
+					<div className="project-background">
+						<div className="project-background-side"></div>
+						<div className="project-background-center"></div>
+						<div className="project-background-side"></div>	
+					</div>	
+					<div className="silk-background">
+						<div className="silk-wave wave1"></div>
+					    <div className="silk-wave wave2"></div>
+					    <div className="silk-wave wave3"></div>
+					</div>
+				<div onMouseOut={handleMouseLeave}>						
+					<div className="project-container">
+						<div className={`project-container-top ${mainPageState === "translation" ? "translation" : "translation-reverse"}`}>
+							<PreviousButton isOpen={isOpen}/>
+							<div className='project-image-description'>
+								<ProjectDescription isOpen={isOpen}/>
+								<ProjectImage/>						
+							</div>
+							<NextButton isOpen={isOpen}/>	
+						</div>					
+						<ProjectIndex/>				
+					</div>
 				</div>
 			</div>
 		</section>

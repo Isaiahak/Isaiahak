@@ -14,6 +14,7 @@ function AboutMe(){
 		" Currently I tackling full-stack development by working on a set of online party games\n" 
 		+" to be hosted online for my friends to play!\n" 
 	]
+	// can add a section on education 
 
 	const aboutMeSectionImages = ["image1","image2","image3"]
 
@@ -26,7 +27,7 @@ function AboutMe(){
 		setScrollPosition(position)
 		document.documentElement.style.setProperty('--scroll', position)
 	}
-	/*
+	
 	useEffect(() => {
 		handleScroll()
 		window.addEventListener('scroll', handleScroll, { passive: true })
@@ -34,7 +35,7 @@ function AboutMe(){
 			window.removeEventListener('scroll', handleScroll);
 		}
 	}, [])
-	*/
+	
 	useEffect(() => {
 		const intervalId = setInterval(() => {
 			time.current = new Date().getSeconds()
@@ -57,7 +58,7 @@ function AboutMe(){
 	  )	
 	}
 
-
+	
 	const AboutMeDescriptions = () =>{
 		var text = aboutMeSections[currentIndex]
 		var image = aboutMeSectionImages[currentIndex]
