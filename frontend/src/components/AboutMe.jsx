@@ -39,11 +39,11 @@ function AboutMe(){
 	useEffect(() => {
 		const intervalId = setInterval(() => {
 			time.current = new Date().getSeconds()
-			if (time.current < 5){
+			if (time.current < 10){
 				startTime.current = new Date().getSeconds()
 			}
 			var diff = time.current - startTime.current
-			if(diff >= 5){
+			if(diff >= 10){
 				setCurrent()
 				startTime.current = time.current
 			}
@@ -62,16 +62,59 @@ function AboutMe(){
 	const AboutMeDescriptions = () =>{
 		var text = aboutMeSections[currentIndex]
 		var image = aboutMeSectionImages[currentIndex]
+
+		const SectionOne = () => {
+			return(
+				<div className="main-description-container">
+					<div className="description-container">
+						<p className="description">{text}</p>
+						<ProgressBar/>
+					</div>
+				</div>
+			)
+		}
+
+		const SectionTwo = () => {
+			return(
+				<div className="main-description-container-2">
+					<div className="description-2-container">
+						<p className="description">{text}</p>
+						<ProgressBar/>
+					</div>
+					<div className="description-2-images">
+						<div className="description-2-image-container">
+							<h1 className="description-image-placeholder">{image}</h1>
+						</div>
+						<div className="description-2-image-container">
+							<h1 className="description-image-placeholder">{image}</h1>
+						</div>
+						<div className="description-2-image-container">
+							<h1 className="description-image-placeholder">{image}</h1>
+						</div>
+					</div>
+				</div>
+			)
+		}
+
+		const SectionThree = () => {
+			return(
+				<div className="main-description-container">
+					<div className="description-image-container">
+						<h1 className="description-image-placeholder">{image}</h1>
+					</div>
+					<div className="description-container">
+						<p className="description">{text}</p>
+						<ProgressBar/>
+					</div>
+				</div>
+			)
+		}
+
+		const CurrentSection = currentIndex == 0 ? SectionOne : currentIndex == 1 ? SectionTwo : SectionThree
+
+
 		return(
-			<div className="main-description-container">
-				<div className="description-image-container">
-					<h1 className="description-image-placeholder">{image}</h1>
-				</div>
-				<div className="description-container">
-					<p className="description">{text}</p>
-					<ProgressBar/>
-				</div>
-			</div>
+			<CurrentSection/>
 		)
 	}
 	

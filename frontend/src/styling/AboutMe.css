@@ -13,7 +13,7 @@
 
 .aboutme-main-container{
     position: relative;
-    width: 60rem;
+    width: 80rem;
     height: 75%;
     display: flex;
     flex-direction: column;
@@ -21,10 +21,22 @@
     border-radius: 25px;
 }
 
+.description-2-container{
+    width: 100%;
+    height: 20%;
+    background-color: #1a1a1a;
+    border: solid;
+    border-color: grey;
+    border-radius: 10px;
+    justify-self: center;
+    align-self: center;
+
+}
+
 .main-description-container{
     position: relative;
     width: 90%;
-    height: 40%;
+    height: 60%;
     display: flex;
     flex-direction: row;
     gap: 3rem;
@@ -33,8 +45,35 @@
     margin-inline: auto;
     margin-top: 3rem;
 }
+
+.main-description-container-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 3 rem;
+}
+
+.description-2-images{
+    justify-self: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+
+}
 .description-image-container{
     width: 36%;  
+    height: 100%;
+    background-color: #1a1a1a;
+    border: solid;
+    border-color: grey;
+    border-radius: 10px;
+}
+
+.description-2-image-container{
+    width: 25%;
     height: 100%;
     background-color: #1a1a1a;
     border: solid;
@@ -94,14 +133,14 @@
     border-bottom-right-radius: 10px;
     height: 0.75rem;
     align-self: flex-start;
-    animation: progress-bar 5s linear 0s 1;
+    animation: progress-bar 10s linear 0s 1;
     flex-grow: 0;
 } 
 
 
 @keyframes progress-bar {
-    from {width:0%; background-color: #e8e8e8}
-    to {width:100%; background-color: #1a1a1a}
+    from {width:0%; background-color: #1a1a1a}
+    to {width:100%; background-color: #e8e8e8}
 }
 
 .component{

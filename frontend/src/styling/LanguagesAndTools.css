@@ -23,7 +23,7 @@
 .image-container{
 	position: relative;
 	width: 200%;
-	left: -30%;
+	
 	align-self: flex-start;
 	max-height: 1.5rem;
 	display: flex;
