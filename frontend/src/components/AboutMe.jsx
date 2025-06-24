@@ -1,10 +1,9 @@
-import "../styling/AboutMe.css"
 import LanguagesAndTools from "./LanguagesAndTools.jsx"
 import {useState, useEffect, useRef} from "react"
 
 function AboutMe(){
 	
-	const [currentIndex, setCurrentIndex] = useState(0)
+	const [currentIndex, setCurrentIndex] = useState(1)
 	const [scrollPosition, setScrollPosition] = useState(0)
 	const startTime = useRef(new Date().getSeconds())
 	const time = useRef(new Date().getSeconds())
@@ -36,6 +35,7 @@ function AboutMe(){
 		}
 	}, [])
 	
+	/*
 	useEffect(() => {
 		const intervalId = setInterval(() => {
 			time.current = new Date().getSeconds()
@@ -51,10 +51,11 @@ function AboutMe(){
 		return () => clearInterval(intervalId)
 	},[]);
 
-	
+	*/
+
 	const ProgressBar = () =>{
 		return (
-	    <div className="progress-bar"/>
+	    <div className="bg-primary h-4 mt-4 mx-auto bottom-0 rounded-md self-start animate-expand "/>
 	  )	
 	}
 
@@ -65,10 +66,9 @@ function AboutMe(){
 
 		const SectionOne = () => {
 			return(
-				<div className="main-description-container">
-					<div className="description-container">
-						<p className="description">{text}</p>
-						<ProgressBar/>
+				<div className="flex flex-col w-[90%] h-40 md:h-[70%] bg-secondary rounded-md border-2 border-gray-500 hover:border-white mx-auto ">
+					<div className="">
+						<p className="text-center self-center">{text}</p>
 					</div>
 				</div>
 			)
@@ -76,19 +76,18 @@ function AboutMe(){
 
 		const SectionTwo = () => {
 			return(
-				<div className="main-description-container-2">
+				<div className="flex flex-col w-[90%] bg-tertiary rounded-md gap-4 self-center">
 					<div className="description-2-container">
-						<p className="description">{text}</p>
-						<ProgressBar/>
+						<p className="bg-secondary border-2 border-gray-500 rounded-md hover:border-white">{text}</p>
 					</div>
-					<div className="description-2-images">
-						<div className="description-2-image-container">
+					<div className="flex flex-row gap-4 self-center justify-center place-content-center">
+						<div className="">
+							<h1 className="bg-secondary border-2 w-[8.2rem] h-[10rem] md:w-[26.5rem] md:h-[30rem] border-gray-500 hover:border-white rounded-md ">{image}</h1>
+						</div>
+						<div className="bg-secondary border-2 w-[8.2rem] h-[10rem] md:w-[26.5rem] md:h-[30rem] border-gray-500 hover:border-white rounded-md ">
 							<h1 className="description-image-placeholder">{image}</h1>
 						</div>
-						<div className="description-2-image-container">
-							<h1 className="description-image-placeholder">{image}</h1>
-						</div>
-						<div className="description-2-image-container">
+						<div className="bg-secondary border-2 w-[8.2rem] h-[10rem] md:w-[26.5rem] md:h-[30rem] border-gray-500 hover:border-white rounded-md ">
 							<h1 className="description-image-placeholder">{image}</h1>
 						</div>
 					</div>
@@ -104,7 +103,6 @@ function AboutMe(){
 					</div>
 					<div className="description-container">
 						<p className="description">{text}</p>
-						<ProgressBar/>
 					</div>
 				</div>
 			)
@@ -120,15 +118,16 @@ function AboutMe(){
 	
 	return(
 		<section id="about">
-			<div className="aboutme-container">
-				<div className="aboutme-intro-container"
+			<div className="flex flex-col bg-tertiary w-full h-[35rem] md:w-full md:h-[30rem] mb-fill place-content-start">
+				<div className=""
 				style={{ opacity: scrollPosition}}>
-					<h1 className="aboutme-intro">Here's a little bit about me</h1>		
+					<h1 className="text-center text-2xl mb-10 text-white self-center">Here's a little bit about me</h1>		
 				</div>
-				<div className="aboutme-main-container">	
+				<div className="flex flex-col place-content-center justify-center">	
 				<AboutMeDescriptions/>
 				<LanguagesAndTools/>
 				</div>
+				<ProgressBar/>
 			</div>	
 		</section>
 	)

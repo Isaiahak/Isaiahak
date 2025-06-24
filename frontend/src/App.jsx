@@ -3,7 +3,7 @@ import Projects from "./components/Projects.jsx"
 import Layout from "./components/Layout.jsx"
 import AboutMe from "./components/AboutMe.jsx"
 import Home from "./components/Home.jsx"
-
+import './index.css'
 function App() {
 
   return (
