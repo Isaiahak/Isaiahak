@@ -36,7 +36,7 @@ const Home = () =>{
 
 	return (
 		<section id="home">
-			<div className="w-full h-[35rem] md:w-full md:h-[50rem] mx-auto">
+			<div className="w-full h-[35rem] md:w-full md:h-[55rem] mx-auto">
 				<div className="flex flex-col justify-center place-content-center">	
 					<h1 className="text-6xl self-center mt-20 mb-20">Welcome</h1>
 					<h2 className="text-2xl self-center">Isaiah Ashton-Kenny</h2>

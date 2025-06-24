@@ -89,7 +89,7 @@ function LanguagesAndTools (){
 	},[])
 
 	return(
-		<div className=" w-[90%] h-20 md:h-[15rem]  gap-2 md:gap-4 bg-secondary overflow-hidden  self-center mt-[5%] border-2 rounded-md border-gray-500 round-md flex flex-col hover:border-white" onMouseOver={() => setStopShift(true)} onMouseLeave={() => setStopShift(false)}>
+		<div className=" w-[90%] h-20 md:h-[6rem] md:w-[60rem] gap-2 md:gap-4 bg-secondary overflow-hidden  self-center mt-[2rem] md:mt-[1rem] border-2 rounded-md border-gray-500 round-md flex flex-col hover:border-white" onMouseOver={() => setStopShift(true)} onMouseLeave={() => setStopShift(false)}>
 			<h1 className="self-center ">Some tools/languages I am getting familiar with </h1>		
 			<div style={{ transform: `translateX(${shiftAmount}px)` }}
 	            className="flex flex-row flex-nowrap ">

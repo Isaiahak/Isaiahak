@@ -1,4 +1,3 @@
-import "../styling/Projects.css"
 import Flicks from "../assets/Flicks.jpg"
 import FlicksSearchPage from "../assets/FlickSearchPage.png"
 import FlicksMoviePage from "../assets/FlicksMoviePage.png"
@@ -41,7 +40,6 @@ function Projects(){
 
 	useEffect(() =>{
 		if(isOpen){
-			// instead of an instant flex state change i want to do a transform into the flex change
 			setMainPageState('translation')
 		}else{
 			setMainPageState('translation-reverse')
@@ -80,15 +78,15 @@ function Projects(){
 		var title = project[currentProject][0]
 
 		return(
-			<div className="project-image-container">
-				<img src={currentImage} alt={title} className="project-image"/>
+			<div className="flex flex-col max-h-[99%] bg-primary max-w-[99%] rounded-2xl self-center justify-center place-content-center">
+				<img src={currentImage} alt={title} className="max-h-[80%] max-w-[80%]"/>
 			</div>
 		)
 	}
 
 	const ProjectIndex = () =>{
 		return(
-			<div className="dot-container">
+			<div className="flex flex-row gap-2 md:gap-[2rem] ">
 		      {project.map((item, index) => (
 		        <span key={index}  className={`item ${index === currentProject ? "highlighted-dot" : "dot"}`}></span>
 		      ))}
@@ -100,8 +98,8 @@ function Projects(){
 		var imagePath = project[currentProject][1]
 		var title = project[currentProject][0]
 		return(
-			<div className="project-image-container">
-				<img src={imagePath} alt={title} className="project-image" onMouseOver={() => setIsOpen(true)}></img>
+			<div className="flex flex-col max-h-[99%] bg-primary max-w-[99%] rounded-2xl self-center justify-center place-content-center ">
+				<img src={imagePath} alt={title} className="max-h-[80%] max-w-[80%]" onMouseOver={() => setIsOpen(true)}></img>
 			</div>
 		)
 			
@@ -110,7 +108,7 @@ function Projects(){
 	const ProjectImage = () =>{
 		if (isOpen){
 			return(
-			<div className="project-image-outer-border">
+			<div className="flex md:w-[40rem] md:h-[25rem] border-4 rounded justify-center">
 				<div className="project-image-rotation"></div>
 				<ProjectImages/>
 			</div>
@@ -118,7 +116,7 @@ function Projects(){
 		}
 		else{
 			return(
-			<div className="project-image-outer-border">
+			<div className="">
 				<div className="project-image-rotation"></div>
 				<MainImage/>
 			</div>
@@ -185,29 +183,35 @@ function Projects(){
 
 	return(	
 		<section id="projects">
-			<h1 className="projects-title">Some of my previous projects</h1>
-			<div className="main-container" >
-					<div className="project-background">
-						<div className="project-background-side"></div>
-						<div className="project-background-center"></div>
-						<div className="project-background-side"></div>	
-					</div>	
+			<div className ="flex flex-col w-full h-[35rem] md:w-full md:h-[55rem] mb-fill place-content-start">
+				<h1 className="flex self-center text-2xl md:text-4xl">Some of my previous projects</h1>
+				<div className="flex flex-col">
+					{/*
+						<div className="project-background">
+							<div className="project-background-side"></div>
+							<div className="project-background-center"></div>
+							<div className="project-background-side"></div>	
+						</div>	
+					*/}
 					<div className="silk-background">
-						<div className="silk-wave wave1"></div>
-					    <div className="silk-wave wave2"></div>
-					    <div className="silk-wave wave3"></div>
+						{/*figure out the transform*/}
+						<div className="absolute t-0 l-[50%] w-[100rem] h-[100] rounded-full opacity-70 visible  silk-background animate-wave wave1"></div>
+						<div className="absolute t-0 l-[50%] w-[100rem] h-[100] rounded-full opacity-70 visible  silk-background animate-wave wave2"></div>
+						<div className="absolute t-0 l-[50%] w-[100rem] h-[100] rounded-full opacity-70 visible  silk-background animate-wave wave3"></div>
+
 					</div>
-				<div onMouseOut={handleMouseLeave}>						
-					<div className="project-container">
-						<div className={`project-container-top ${mainPageState === "translation" ? "translation" : "translation-reverse"}`}>
-							<PreviousButton isOpen={isOpen}/>
-							<div className='project-image-description'>
-								<ProjectDescription isOpen={isOpen}/>
-								<ProjectImage/>						
-							</div>
-							<NextButton isOpen={isOpen}/>	
-						</div>					
-						<ProjectIndex/>				
+					<div onMouseOut={handleMouseLeave}>						
+						<div className="md:w-60rem self-center ">
+							<div className={`project-container-top ${mainPageState === "translation" ? "translation" : "translation-reverse"}`}>
+								<PreviousButton isOpen={isOpen}/>
+								<div className='project-image-description'>
+									<ProjectDescription isOpen={isOpen}/>
+									<ProjectImage/>						
+								</div>
+								<NextButton isOpen={isOpen}/>	
+							</div>					
+							<ProjectIndex/>				
+						</div>
 					</div>
 				</div>
 			</div>
