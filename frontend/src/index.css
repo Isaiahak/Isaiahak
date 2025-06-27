@@ -21,31 +21,9 @@ html, body {
   display: none;
 }
 
-.gradient-background{
-  background: linear-gradient(180deg,rgba(15, 15, 15, 1) 0%, rgba(17, 3, 38, 1) 16%, rgba(17, 3, 38, 1) 84%, rgba(15, 15, 15, 1) 100%);
-}
-
-.silk-background{
-  background: linear-gradient(125deg, #ff7eb9, #8c54ff, #5ce1e6);
-}
-
-.wave1 {
-    animation-duration: 25s;
-    visibility: visible;
-}
-
-.wave2 {
-    animation-duration: 30s;
-    animation-delay: -5s;
-    opacity: 0.2;
-    visibility: visible;
-}
-
-.wave3 {
-    animation-duration: 35s;
-    animation-delay: -7s;
-    opacity: 0.5;
-    visibility: visible;
+.language-and-tool-hover:hover{
+    transform: scale(1.15);
+    transition: transform 0.35s ease;
 }
 
 @theme{
@@ -55,29 +33,18 @@ html, body {
   --color-border-color: grey;
 
 
-  --animate-progress-bar: progress-bar 10s linear 0s infinite;
+  --animate-progress-bar: progress-bar 10s linear 0s 1;
 
   @keyframes progress-bar {
     0% {width:0%; background-color: #1a1a1a}
     100% {width:100%; background-color: #e8e8e8}
   }
 
-  --animate-progress-bar-md: progress-bar-md 10s linear 0s infinite;
+  --animate-progress-bar-md: progress-bar-md 10s linear 0s 1;
 
   @keyframes progress-bar-md{
     0% {width:0%; background-color: #1a1a1a}
     100% {width:60rem; background-color: #e8e8e8}
   }
 
-  --animate-wave: drift linear infinite;
-
-
-  @keyframes drift {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
 }

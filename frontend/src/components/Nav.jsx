@@ -1,11 +1,11 @@
 const Nav = () =>{
 
 	return(
-		<nav className="w-full h-10 md:h-12 md:h-min-12">
-			<div className="w-full h-full flex flex-row">
-				<a href="#about" className="w-[33%] h-full mx-auto text-gray-200 bg-tertiary text-center hover:bg-[#4c2282] ">ABOUT</a>
-				<a href="#projects" className="w-[33%] h-full mx-auto text-gray-200 bg-tertiary text-center hover:bg-[#4c2282]">PROJECTS</a>
-				<a href="#quicklinks" className="w-[33%] h-full mx-auto text-gray-200 bg-tertiary text-center hover:bg-[#4c2282]">LINKS</a>
+		<nav className="flex w-full h-10 md:h-[4rem] md:h-min-12 bg-[#000000] opacity-70 justify-center place-content-center ">
+			<div className="self-center md:w-[90rem] md:h-[4rem] flex flex-row flex-wrap">
+				<a href="#about" className="w-[33%] h-full mx-auto text-gray-200 hover:bg-primary text-center bg-[#000000] hover:opacity-70 ">ABOUT</a>
+				<a href="#projects" className="w-[33%] h-full mx-auto text-gray-200 hover:bg-primary text-center bg-[#000000] hover:opacity-70">PROJECTS</a>
+				<a href="#quicklinks" className="w-[33%] h-full mx-auto text-gray-200 hover:bg-primary text-center bg-[#000000] hover:opacity-70">LINKS</a>
 			</div>
 		</nav>
 	)

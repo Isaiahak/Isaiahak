@@ -6,7 +6,7 @@ import BidlyAuctionPage from "../assets/BidlyAuctions.jpg"
 import PartyGames from "../assets/PartyGames.png"
 import PartyGamesLobbies from "../assets/PartyGamesLobbies.png"
 import PartyGamesLobby from "../assets/PartyGamesLobby.png"
-import {useState, useEffect, useRef} from 'react'
+import {useState, useEffect, useRef, useMemo} from 'react'
 
 function Projects(){
 	const [currentProject, setCurrentProject] = useState(0)
@@ -65,7 +65,7 @@ function Projects(){
 		}, 1000)
 		return () => clearInterval(intervalId)
 	},[currentProjectImage,currentProject,moreProjectImages])
-
+	
 	const handleMouseLeave = (e) => {
 		const target = e.relatedTarget
 		if (target instanceof Node && !e.currentTarget.contains(e.relatedTarget)) {
@@ -73,24 +73,30 @@ function Projects(){
         }		
 	}
 
-	const ProjectImages = () => {
-		var currentImage = moreProjectImages[currentProject][currentProjectImage]
-		var title = project[currentProject][0]
-
-		return(
-			<div className="flex flex-col max-h-[99%] bg-primary max-w-[99%] rounded-2xl self-center justify-center place-content-center">
-				<img src={currentImage} alt={title} className="max-h-[80%] max-w-[80%]"/>
-			</div>
-		)
-	}
-
 	const ProjectIndex = () =>{
 		return(
-			<div className="flex flex-row gap-2 md:gap-[2rem] ">
+			<div className="flex flex-row self-center mt-4 gap-2 md:gap-[1rem] ">
 		      {project.map((item, index) => (
-		        <span key={index}  className={`item ${index === currentProject ? "highlighted-dot" : "dot"}`}></span>
+		        <span key={index}  className={`p-1 rounded-full shadow-[0px_10px_20px_rgba(0,0,0,0.19),0px_6px_6px_rgba(0,0,0,0.23)] ${index === currentProject ? "bg-white" : "bg-gray-500"}`}></span>
 		      ))}
 		    </div>
+		)
+	}
+ 
+	const ProjectImages = () => {
+		const currentImage = useMemo(() =>{
+			return moreProjectImages[currentProject][currentProjectImage]
+		}, [currentProject, currentProjectImage])
+		
+
+		const title = useMemo(() =>{
+			return project[currentProject][0]
+		},[currentProject])
+
+		return(
+			<div className="flex flex-col max-w-[98.5%] max-h-[98%] md:w-[49.5rem] md:h-[29.5rem] overflow-hidden rounded-md bg-primary self-center justify-center place-content-center">
+				<img src={currentImage} alt={title} className="h-full w-full object-fill"/>
+			</div>
 		)
 	}
 
@@ -98,8 +104,8 @@ function Projects(){
 		var imagePath = project[currentProject][1]
 		var title = project[currentProject][0]
 		return(
-			<div className="flex flex-col max-h-[99%] bg-primary max-w-[99%] rounded-2xl self-center justify-center place-content-center ">
-				<img src={imagePath} alt={title} className="max-h-[80%] max-w-[80%]" onMouseOver={() => setIsOpen(true)}></img>
+			<div className="flex flex-col  max-w-[98.5%] max-h-[98%] md:w-[49.5rem] md:h-[29.5rem] bg-primary self-center rounded-md overflow-hidden justify-center place-content-center ">
+				<img src={imagePath} alt={title} className="h-full w-full object-fill" onMouseOver={() => setIsOpen(true)}></img>
 			</div>
 		)
 			
@@ -108,16 +114,16 @@ function Projects(){
 	const ProjectImage = () =>{
 		if (isOpen){
 			return(
-			<div className="flex md:w-[40rem] md:h-[25rem] border-4 rounded justify-center">
-				<div className="project-image-rotation"></div>
+			<div className="relative flex w-[23rem] h-[12rem] mx-auto md:w-[45rem] md:h-[30rem] border-primary overflow-clip border-4 rounded-lg justify-center shadow-[0px_10px_20px_rgba(0,0,0,0.19),0px_6px_6px_rgba(0,0,0,0.23)]">
+				<div className="absolute w-[80rem] h-[80rem] bg-secondary z-[-1]"></div>
 				<ProjectImages/>
 			</div>
 			)
 		}
 		else{
 			return(
-			<div className="">
-				<div className="project-image-rotation"></div>
+			<div className="relative flex w-[23rem] h-[15rem] mx-auto md:w-[50rem] md:h-[30rem] border-primary overflow-clip border-4 rounded-lg justify-center shadow-[0px_10px_20px_rgba(0,0,0,0.19),0px_6px_6px_rgba(0,0,0,0.23)]">
+				<div className="absolute w-[80rem] h-[80rem] bg-secondary z-[-1]"></div>
 				<MainImage/>
 			</div>
 			)
@@ -128,11 +134,11 @@ function Projects(){
 	const LanguagesAndTools = () =>{
 		const languagesAndTools = project[currentProject][4]
 		return(
-			<div className="languages-and-tools-container">
+			<div className=" w-[80%] h-[2rem] flex flex-row flex-wrap gap-2 justify-center mt-4 md:mt-4 place-content-baseline md:w-full md:h-[20rem]">
 				{languagesAndTools.map((item, index) => (
-				<div className="languages-and-tools-border">
-					<div className="languages-and-tools-rotation"></div>
-					<div className="languages-and-tools" key={index}>{item}</div>					
+				<div className="relative rounded-xl flex justify-center overflow-clip border-2 border-primary shadow-[0px_10px_20px_rgba(0,0,0,0.19),0px_6px_6px_rgba(0,0,0,0.23)] language-and-tool-hover">
+					<div className="absolute -top-[30%] md:h-[15rem] md:w-[15rem] bg-secondary z-[-1]"></div>
+					<div className="px-2 py-1 m-1 text-[10px] md:text-sm bg-primary rounded-md" key={index}>{item}</div>					
 				</div>
 			))}	
 			</div>
@@ -140,20 +146,20 @@ function Projects(){
 	}
 
 	const ProjectDescription = ({isOpen}) =>{
-		var title = project[currentProject][0]
 		var description = project[currentProject][2]
 		var link = project[currentProject][3]
 		if(!isOpen){
 			return null
 		}
 		return(
-			<div className="project-description" onMouseOver={() => setIsOpen(true)}>
-				<h1>{title}</h1>
-				<div className="project-description-container">
-					<p className="description-text">{description}</p>
+			<div>
+				<div className="flex flex-row md:flex-col w-[23rem] self-center h-[16rem] md:w-[35rem] md:h-[30rem] rounded-md bg-secondary" onMouseOver={() => setIsOpen(true)}>
+					<div className="rounded-md w-[90%] md:h-[60%] bg-primary ml-2 mt-4 mb-4">
+						<p className="p-4 text-[13px] md:text-sm">{description}</p>
+					</div>
+					<link href={link} className=""></link>
+					<LanguagesAndTools/>
 				</div>
-				<link href={link} className="description-link"></link>
-				<LanguagesAndTools/>
 			</div>
 		)
 	}
@@ -162,7 +168,7 @@ function Projects(){
 		if(isOpen)
 			return null
 		return(
-			<button onClick={prevProject} className="prev-button">
+			<button onClick={prevProject} className="flex bg-secondary md:p-5 ml-4 shadow-[0px_10px_20px_rgba(0,0,0,0.19),0px_6px_6px_rgba(0,0,0,0.23)] p-2 rounded-full self-center justify-center md:border-primary-8 ">
 				<svg width="15" height="15" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 			  	<path d="M10.5 4.5L3 12m0 0l7.5 7.5M3 12h18" strokeLinejoin="round" strokeLinecap="round"></path>
 				</svg>
@@ -173,7 +179,7 @@ function Projects(){
 		if(isOpen)
 			return null
 		return(
-			<button onClick={nextProject} className="next-button">
+			<button onClick={nextProject} className="flex bg-secondary md:p-5 mr-4 shadow-[0px_10px_20px_rgba(0,0,0,0.19),0px_6px_6px_rgba(0,0,0,0.23)] p-2 rounded-full self-center justify-center md:border-primary-8 ">
 				  <svg width="15" height="15" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 				  <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" strokeLinejoin="round" strokeLinecap="round"></path>
 				</svg>
@@ -184,7 +190,7 @@ function Projects(){
 	return(	
 		<section id="projects">
 			<div className ="flex flex-col w-full h-[35rem] md:w-full md:h-[55rem] mb-fill place-content-start">
-				<h1 className="flex self-center text-2xl md:text-4xl">Some of my previous projects</h1>
+				<h1 className="flex self-center text-xl my-2 md:my-[5rem] md:text-4xl">Some of my previous projects</h1>
 				<div className="flex flex-col">
 					{/*
 						<div className="project-background">
@@ -193,18 +199,16 @@ function Projects(){
 							<div className="project-background-side"></div>	
 						</div>	
 					*/}
-					<div className="silk-background">
-						{/*figure out the transform*/}
-						<div className="absolute t-0 l-[50%] w-[100rem] h-[100] rounded-full opacity-70 visible  silk-background animate-wave wave1"></div>
-						<div className="absolute t-0 l-[50%] w-[100rem] h-[100] rounded-full opacity-70 visible  silk-background animate-wave wave2"></div>
-						<div className="absolute t-0 l-[50%] w-[100rem] h-[100] rounded-full opacity-70 visible  silk-background animate-wave wave3"></div>
-
+					<div className="abolute w-[100%] h-[100%] mx-auto z-3 overflow-hidden hidden">
+						<div className="absolute t-0 l-[50%] w-[100rem] h-[100] rounded-full opacity-70 visible  wave1"></div>
+						<div className="absolute t-0 l-[50%] w-[100rem] h-[100] rounded-full opacity-70 visible  wave2"></div>
+						<div className="absolute t-0 l-[50%] w-[100rem] h-[100] rounded-full opacity-70 visible  wave3"></div>
 					</div>
 					<div onMouseOut={handleMouseLeave}>						
-						<div className="md:w-60rem self-center ">
-							<div className={`project-container-top ${mainPageState === "translation" ? "translation" : "translation-reverse"}`}>
+						<div className="flex flex-col md:w-60rem self-center">
+							<div className={`flex flex-row mx-auto gap-2 mt-4 md:mt-8 md:gap-8 ${mainPageState === "translation" ? "translation" : "translation-reverse"}`}>
 								<PreviousButton isOpen={isOpen}/>
-								<div className='project-image-description'>
+								<div className='flex flex-col md:flex-row place-content-center gap-4'>
 									<ProjectDescription isOpen={isOpen}/>
 									<ProjectImage/>						
 								</div>
