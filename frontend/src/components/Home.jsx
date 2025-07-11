@@ -16,18 +16,18 @@ const Home = () =>{
 
 	const UsefulLinks = () => {
 		return(
-		<div className='mt-4 flex flex-row gap-4 md:mt-8 justify-center place-content center'>
-			<div className="pt-1.5 pb-1.5 px-4 bg-gray-50 rounded-sm hover:bg-gray-400 ">
-				<button onClick={handleEmail} className="useful-link">
+		<div className='mt-4 flex flex-row gap-4 md:mt-24 justify-center place-content center'>
+			<div className="md:py-4 md:px-10 py-3 px-6 bg-secondary rounded-2xl text-gray-100 hover:bg-primary ">
+				<button onClick={handleEmail} className="useful-link cursor-copy ">
 					<span className="">Copy Email</span>
 				</button>
 			</div>
 		
-			<div className="pt-1.5 pb-1.5 px-4 bg-gray-50 rounded-sm hover:bg-gray-400 ">
+			<div className="md:py-4 md:px-10 py-3 px-6 bg-secondary rounded-2xl text-gray-100 hover:bg-primary ">
 				<a href="/IsaiahAshtonKennyCurrentResume.pdf" download>Download Resume</a>
 			</div>
 		
-			<div className="pt-1.5 pb-1.5 px-4 bg-gray-50 rounded-sm hover:bg-gray-400 ">
+			<div className="md:py-4 md:px-10  py-3 px-6 bg-secondary rounded-2xl text-gray-100 hover:bg-primary ">
 				<a href="https://www.linkedin.com/in/isaiah-ashton-kenny" >LinkedIn</a>	
 			</div>
 		</div>
@@ -36,10 +36,10 @@ const Home = () =>{
 
 	return (
 		<section id="home">
-			<div className="w-full h-[35rem] md:w-full md:h-[55rem] mx-auto">
+			<div className="w-full h-[35rem] md:w-full md:h-[55rem] mx-auto ">
 				<div className="flex flex-col justify-center place-content-center">	
-					<h1 className="text-6xl self-center mt-20 mb-20">Welcome</h1>
-					<h2 className="text-2xl self-center">Isaiah Ashton-Kenny</h2>
+					<h1 className="text-6xl self-center mt-30 mb-20">Welcome</h1>
+					<h2 className="text-3xl self-center">Isaiah Ashton-Kenny</h2>
 					<h3 className="text-xl self-center ">Full Stack Software Engineer </h3>
 					<h3 className="text-xl self-center ">located in Toronto, Ontario</h3>
 				</div>

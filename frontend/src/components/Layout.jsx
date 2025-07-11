@@ -12,9 +12,11 @@ const  Layout = ({children}) =>{
 				<Nav/>
 			</header>
 			<main>
-				<div className=" fixed left-0 top-0 blur-[70px] z-[-2]">
-					<div className="fixed right-[-60%] top-[10%] p-[40rem] rounded-full blur-[70px] opacity-50 grayscale-75 bg-purple-800 z-[-1]"></div>
-					<div className="fixed left-[-0%] top-[-60%] p-[50rem] rounded-full  blur-[70px] opacity-50 bg-purple-950 z-[-1]"></div>
+				<div className="fixed mx-auto w-screen h-screen blur-[70px] z-[-2]">
+					<div className='relative  md:w-[90rem] h-[55rem] mx-auto'>
+						<div className="absolute  right-[-10rem] top-[2rem] md:right-[-40rem] md:top-[10rem] md:p-[40rem] p-[10rem] rounded-full blur-[70px] opacity-50 grayscale-75 bg-purple-300 z-[-1]"></div>
+						<div className="absolute left-[-10rem] top-[-4rem]   md:left-[-60rem] md:top-[-40rem] md:p-[50rem] p-[10rem] rounded-full  blur-[70px] opacity-50 bg-purple-950 z-[-1]"></div>
+					</div>
 				</div>
 				{children}	
 				<Outlet/>
