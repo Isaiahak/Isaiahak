@@ -9,7 +9,6 @@ import BikeView2 from '../assets/bike_view_2.jpg'
 
 function AboutMe(){
 	
-	// i want to fix this page and have scrolling change the slides presented
 
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const [currentVideo, setCurrentVideo] = useState(0)
@@ -25,29 +24,11 @@ function AboutMe(){
 	const setCurrent = () =>{
 		const index  =  currentIndex === aboutMeSections.length -1 ? 0 : currentIndex + 1
 		setCurrentIndex(index)
-		preloadImages(index+1)
 	}
 
 	const handleVideoEnd = () =>{
 		setCurrent()
 		setCurrentVideo(prevVideo => prevVideo === 1 ? 0 : prevVideo + 1)
-	}
-
-	const preloadImages = (index) =>{
-		if (!aboutMeSectionImages[index]) return
-
-		const images = aboutMeSectionImages[index]
-		images.forEach((src) => {
-			if(src.endsWith('.mp4')){
-				const vid = document.createElement("video")
-				vid.src = src
-				vid.preload = 'auto'
-				vid.load()
-			}else{
-				const img = new Image()
-				img.src = src
-			}
-		}) 
 	}
 
 	const ProgressBar = () =>{
@@ -77,7 +58,7 @@ function AboutMe(){
 
 		const SectionTwo = () => {
 			return(
-				<div className="flex flex-col w-[90%] md:w-[60rem] rounded-md gap-4 self-center">
+				<div className="flex flex-col w-[90%] md:w-[60rem] rounded-md gap-4 mx-auto">
 					<div className="flex flex-col w-full h-[6rem] justify-center bg-primary border-2 border-border rounded-md shadow-2xl/30 hover:border-white">
 						<p className=" mx-2 text-xl text-text">{text}</p>
 					</div>
@@ -86,8 +67,8 @@ function AboutMe(){
 							<img className="" src={currentVideo === 0 ? image[0] : image[1]}/>
 						</div>
 						<div className="bg-primary border-2 w-[8.2rem] h-[9rem] overflow-hidden md:w-[22.33rem] md:h-[24rem] shadow-2xl/30 border-border hover:border-white rounded-md ">
-							<video key={Climbing1} muted onEnded={handleVideoEnd} autoPlay className={`w-full h-full object-fill ${currentVideo === 0 ? 'block' : 'hidden'}`} source src={Climbing1} type="video/mp4"/>
-							<video key={Climbing2} muted onEnded={handleVideoEnd} autoPlay className={`w-full h-full object-fill ${currentVideo === 0 ? 'hidden' : 'block'}`} source src={Climbing2} type="video/mp4"/>
+							<video key={Climbing1} muted onEnded={handleVideoEnd} autoPlay preload="auto" className={`w-full h-full object-fill ${currentVideo === 0 ? 'block' : 'hidden'}`} source src={Climbing1} type="video/mp4"/>
+							<video key={Climbing2} muted onEnded={handleVideoEnd} autoPlay preload="auto" className={`w-full h-full object-fill ${currentVideo === 0 ? 'hidden' : 'block'}`} source src={Climbing2} type="video/mp4"/>
 						</div>
 						<div className="bg-primary border-2 w-[8.2rem] h-[9rem] overflow-hidden place-self-center md:w-[19.33rem] md:h-[22rem] shadow-2xl/30 border-border hover:border-white rounded-md ">
 							<img src={currentVideo === 0 ? image[4] : image[5]}/>
@@ -111,10 +92,18 @@ function AboutMe(){
 			)
 		}
 
-		const CurrentSection = currentIndex == 0 ? SectionOne : currentIndex == 1 ? SectionTwo : SectionThree
-
 		return(
-			<CurrentSection/>
+			<div>
+			    <div style={{ display: currentIndex === 0 ? "block" : "none" }}>
+			      <SectionOne />
+			    </div>
+			    <div style={{ display: currentIndex === 1 ? "block" : "none" }}>
+			      <SectionTwo />
+			    </div>
+			    <div style={{ display: currentIndex === 2 ? "block" : "none" }}>
+			      <SectionThree />
+			    </div>
+  			</div>
 		)
 	}
 	
@@ -123,10 +112,8 @@ function AboutMe(){
 			<div className="flex flex-col w-full h-[20rem] md:w-full md:h-[55rem] mb-fill place-content-start">
 				<h1 className="text-center text-2xl md:text-4xl mb-10 md:mb-[5rem] md:mt-[5rem] text-text self-center">Here's a little bit about me</h1>		
 				<div className="flex flex-col place-content-center justify-center">	
-				<AboutMeDescriptions/>
-			
+					<AboutMeDescriptions/>
 				</div>
-				{currentIndex === 1 ? null : <ProgressBar/>}
 			</div>	
 		</section>
 	)
