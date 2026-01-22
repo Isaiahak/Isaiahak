@@ -1,4 +1,4 @@
-import  {Outlet,Link} from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 import Home from './Home'
 import Nav from './Nav'
 import AboutMe from './AboutMe'
@@ -7,17 +7,14 @@ import QuickLinks from './QuickLinks'
 import Background from './Background'
 
 
-const  Layout = ({children}) =>{
+const Layout = ({ children }) => {
 
 	return (
-		<div>	
-			<header>
-				<Nav/>
-			</header>
+		<div>
 			<main>
-				<Background/>				
-				{children}	
-				<Outlet/>
+				<Background />
+				{children}
+				<Outlet />
 			</main>
 		</div>
 	)
