@@ -7,14 +7,14 @@ import './index.css'
 
 function App() {
 
-  return (
-    <Layout>
-      <Home id="/"/>
-      <AboutMe id="/about"/>
-      <Projects id="/project"/>
-      <QuickLinks/>
-    </Layout>
-  )
+	return (
+		<Layout>
+			<Home id="/" />
+			<AboutMe id="/about" />
+			<Projects id="/project" />
+			<QuickLinks />
+		</Layout>
+	)
 }
 
 export default App
