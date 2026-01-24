@@ -4,45 +4,43 @@ package main
 var Flicks = "../frontend/src/assets/Flicks.jpg"
 var FlicksMoviePage = "../frontend/src/assets/FlicksMoviePage.png"
 var FlickSearchPage = "../frontend/src/assets/FlickSearchPage.png"
+var FlicksImages = []string{Flicks, FlicksMoviePage, FlicksSearchPage}
+var FlicksInfo = []string{}
+ 
 
-var BidlyAuctions = "../frontend/src/assets/"
-var BidlyAuctionPage = "../frontend/src/assets/"
+var BidlyAuctions = "../frontend/src/assets/BidlyAuctions.jpg"
+var BidlyAuctionPage = "../frontend/src/assets/BidlyAuctionsMain.jpg"
+var BidlyImages = []string{BidlyAuctions, BidlyAuctionPage}
+var BidlyTitle = "BidlyAuctions"
+var BidlyDesc = "A full-stack auction platform supporting Forward and Dutch Auctions, built with a modern layered architecture."
+var BidlyLink =	"BidlyAuctions link"
+var BidlySvgs = []string{"SpringBoot", "HTML", "CSS", "JAVA", "DOCKER", "Rabbitmq", "Kubernetes", "Postgresql", "JUnit"}
+var BidlyInfo = []string{BidlyTitle, BidlyDesc, BidlyLink, BidlySvgs}
 
-var PartyGamesLobbies = "../frontend/src/assets/"
-var PartyGameLobby = "../frontend/src/assets/"
+var PartyGames = "../frontend/src/assets/PartyGames.png"
+var PartyGamesLobbies = "../frontend/src/assets/PartyGamesLObbies.png"
+var PartyGamesLobby = "../frontend/src/assets/PartyGamesLobby.png"
+var PartyImages = []string{PartyGames, PartyGamesLobbies, PartyGamesLobby}
 
-var LanguagesAndTools = "../frontend/src/assets/" 
+var WorkflowAppTasks = "../frontend/src/assets/WorkflowAppTask.png" 
+var WorkflowImages = []string{WorkflowAppTasks}
 
-var WorkflowAppTasks = "../frontend/src/assets/" 
-var MemoryGame = "../frontend/src/assets/" 
+var MemoryGame = "../frontend/src/assets/MemoryGame.png" 
+var MemoryImages = []string{MemoryGame}
+
+var LanguagesAndTools = "../frontend/src/assets/LanguageAndTools.html" 
+
 
 
 func buildProjects(filePath string) (string, error) {
 	
 	return "", nil
 }
-import FlicksSearchPage from "../assets/FlickSearchPage.png"
-import FlicksMoviePage from "../assets/FlicksMoviePage.png"
-import BidlyAuctions from "../assets/BidlyAuctionsMain.jpg"
-import BidlyAuctionPage from "../assets/BidlyAuctions.jpg"
-import PartyGames from "../assets/PartyGames.png"
-import PartyGamesLobbies from "../assets/PartyGamesLobbies.png"
-import PartyGamesLobby from "../assets/PartyGamesLobby.png"
-import LanguagesAndTools from "./LanguagesAndTools.jsx"
-import WorkflowAppTasks from "../assets/WorkflowAppTasks.png"
-import MemoryGame from "../assets/MemoryGame.png"
 
 function Projects() {
 
 	var projects = [
-		["BidlyAuctions",
-			BidlyAuctions,
-			"A full-stack auction platform supporting Forward and Dutch Auctions, built with a modern layered architecture.",
-			"BidlyAuctions link",
-			["SpringBoot", "HTML", "CSS", "JAVA", "DOCKER", "Rabbitmq", "Kubernetes", "Postgresql", "JUnit"]
-		],
-
-		["Flicks",
+				["Flicks",
 			Flicks,
 			"A personalized movie recommendation site using AI and user preferences to suggest films that improve with feedback.",
 			"Flicks link",
@@ -72,13 +70,6 @@ function Projects() {
 	]
 
 
-	var moreImages = [
-		[BidlyAuctions, BidlyAuctionPage],
-		[Flicks, FlicksSearchPage, FlicksMoviePage],
-		[PartyGames, PartyGamesLobby, PartyGamesLobbies],
-		[MemoryGame],
-		[WorkflowAppTasks],
-	]
 
 	var icons = {
 		"JS": <svg viewBox="0 0 128 128" key="2" className="self-center md:max-w-80 md:max-h-80 ">
