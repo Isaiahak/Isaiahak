@@ -26,54 +26,54 @@ var AboutImages3 = []string{}
 var sectionImages = [][]string{AboutImages1, AboutImages2, AboutImages3}
 
 var ProgressBar = `
-<div className="mx-auto self-start w-[90%] md:w-[60rem]">
-	<div className="flex h-4 mt-4 rounded-md self-start shadow-2xl/30 shadow-gray-500 animate-progress-bar md:animate-progress-bar-md " />
+<div class="mx-auto self-start w-[90%] md:w-[60rem]">
+	<div class="flex h-4 mt-4 rounded-md self-start shadow-2xl/30 shadow-gray-500 animate-progress-bar md:animate-progress-bar-md " />
 </div>
 
 `
 
 var Section1 = `
-<div className="flex flex-col w-[90%] h-64 md:h-[30rem] md:w-[60rem] justify-center bg-primary rounded-md  shadow-2xl/30 border-2 border-border mx-auto ">
-	<div className="flex flex-row gap-2">
-		<div className=" ml-4 md:ml-10">
-			<img src={image[0]} className=" w-90 h-40 md:w-[40rem] md:h-90 rounded-md " />
+<div id="about-1" class="flex flex-col w-[90%] h-64 md:h-[30rem] md:w-[60rem] justify-center bg-primary rounded-md  shadow-2xl/30 border-2 border-border mx-auto ">
+	<div class="flex flex-row gap-2">
+		<div class=" ml-4 md:ml-10">
+			<img src={image[0]} class=" w-90 h-40 md:w-[40rem] md:h-90 rounded-md " />
 		</div>
-		<p className="text-lg md:text-2xl text-center text-text self-center mx-2 md:mx-18">{text}</p>
+		<p class="text-lg md:text-2xl text-center text-text self-center mx-2 md:mx-18">{text}</p>
 	</div>
 </div>
 `
 
 var Section2 = `
-<div className="flex flex-col w-[90%] md:w-[60rem] rounded-md gap-4 mx-auto">
-	<div className="flex flex-col w-full h-[6rem] justify-center bg-primary border-2 border-border rounded-md shadow-2xl/30">
-		<p className=" mx-2 text-xl text-text">{text}</p>
+<div id="about-2" class="flex flex-col w-[90%] md:w-[60rem] rounded-md gap-4 mx-auto">
+	<div class="flex flex-col w-full h-[6rem] justify-center bg-primary border-2 border-border rounded-md shadow-2xl/30">
+		<p class=" mx-2 text-xl text-text">{text}</p>
 	</div>
-	<div className="flex flex-row gap-x-4 md:w-[60rem] self-center justify-center">
-		<div className="flex flex-col bg-primary border-2 w-[8.2rem] h-[9rem] place-self-center overflow-hidden md:w-[19.33rem] md:h-[22rem] shadow-2xl/30 border-border rounded-md ">
-			<img className="opacity-100 h-full" src={image[0]}/>
-			<img className="opacity-0 h-0" src={image[1]}/>
+	<div class="flex flex-row gap-x-4 md:w-[60rem] self-center justify-center">
+		<div class="flex flex-col bg-primary border-2 w-[8.2rem] h-[9rem] place-self-center overflow-hidden md:w-[19.33rem] md:h-[22rem] shadow-2xl/30 border-border rounded-md ">
+			<img class="opacity-100 h-full" src={image[0]}/>
+			<img class="opacity-0 h-0" src={image[1]}/>
 		</div>
-		<div className="bg-primary border-2 w-[8.2rem] h-[9rem] overflow-hidden md:w-[22.33rem] md:h-[24rem] shadow-2xl/30 border-border rounded-md ">
-			<video key={Climbing1} muted autoPlay preload="auto" className="w-full h-full opacity-100 object-fill" source={image[3]} type="video/mp4" />
-			<video key={Climbing2} muted autoPlay preload="auto" className="w-full h-0 opacity-0 object-fill"  source={image[4]} type="video/mp4" />
+		<div class="bg-primary border-2 w-[8.2rem] h-[9rem] overflow-hidden md:w-[22.33rem] md:h-[24rem] shadow-2xl/30 border-border rounded-md ">
+			<video key={Climbing1} muted autoPlay preload="auto" class="w-full h-full opacity-100 object-fill" source={image[3]} type="video/mp4" />
+			<video key={Climbing2} muted autoPlay preload="auto" class="w-full h-0 opacity-0 object-fill"  source={image[4]} type="video/mp4" />
 		</div>
-		<div className="flex flex-col bg-primary border-2 w-[8.2rem] h-[9rem] overflow-hidden place-self-center md:w-[19.33rem] md:h-[22rem] shadow-2xl/30 border-border rounded-md ">
-			<img className="opacity-100 h-full" src={image[4]}/>
-			<img className="opacity-0 h-0" src={image[5]}/>
+		<div class="flex flex-col bg-primary border-2 w-[8.2rem] h-[9rem] overflow-hidden place-self-center md:w-[19.33rem] md:h-[22rem] shadow-2xl/30 border-border rounded-md ">
+			<img class="opacity-100 h-full" src={image[4]}/>
+			<img class="opacity-0 h-0" src={image[5]}/>
 		</div>
 	</div>
 </div>
 `
 
 var Section3 = `
-<div className="flex flex-col w-[90%] md:w-[60rem] h-full gap-4 mx-auto ">
-	<div className="flex flex-col w-full h-[7rem] md:h-[15rem] self-center justify-center shadow-2xl/30 bg-primary border-2 border-border rounded-md">
-		<p className="mx-2 text-center text-text self-center">{text}</p>
-	</div>
-	<div className="flex flex-col w-full h-[7rem] md:h-[15rem] self-center bg-primary border-2 shadow-2xl/30 border-border rounded-md">
-		<h1 className="">
+<div id="about-3" class="flex flex-col w-[90%] md:w-[60rem] h-full gap-4 mx-auto ">
+	<<div class="flex flex-col w-full h-[7rem] md:h-[15rem] self-center bg-primary border-2 shadow-2xl/30 border-border rounded-md">
+		<h1 class="">
 	{image}
 	</h1>
+	</div>
+div class="flex flex-col w-full h-[7rem] md:h-[15rem] self-center justify-center shadow-2xl/30 bg-primary border-2 border-border rounded-md">
+		<p class="mx-2 text-center text-text self-center">{text}</p>
 	</div>
 </div>
 `
@@ -89,7 +89,7 @@ func buildAboutme(filePath string) (string, error) {
 
 	aboutmeHTML, err := os.ReadFile(filePath)
 	if err != nil {
-		return "", fmt.Errorf("couldn't build aboutme due to:", err)
+		return "", fmt.Errorf("couldn't build aboutme due to:%s", err)
 	}
 
 	aboutme := string(aboutmeHTML)
@@ -102,6 +102,7 @@ func buildSection(sectionText, sectionHTML string, sectionImages []string) strin
 	var inBracket bool
 	var readCount bool
 	var html strings.Builder
+	var types strings.Builder
 	index := -1
 	for i := range sectionHTML {
 		if inBracket {
@@ -109,23 +110,23 @@ func buildSection(sectionText, sectionHTML string, sectionImages []string) strin
 				index, _ = strconv.Atoi(string(sectionHTML[i]))
 				readCount = false
 			} else if sectionHTML[i] == '}' {
-				element := html.String()
+				element := types.String()
 				if element == "image" {
 					if index != -1 {
 						html.WriteString(`"` + sectionImages[index] + `"`)
 						index = -1
-					} else {
-						html.WriteString(`"` + sectionImages[0] + `"`)
 					}
 				} else {
 					html.WriteString(sectionText)
 				}
+				types.Reset()
+				inBracket = false
 			} else if sectionHTML[i] == '[' {
 				readCount = true
 			} else if sectionHTML[i] == ']' {
 				continue
 			} else {
-				html.WriteByte(sectionHTML[i])
+				types.WriteByte(sectionHTML[i])
 			}
 		} else {
 			if sectionHTML[i] == '{' {

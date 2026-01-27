@@ -25,18 +25,18 @@ var script = `
 </script>
 `
 var usefulLinks = `
-<div className='mt-4 flex flex-row gap-4 md:mt-24 justify-center place-content center'>
-	<div className="md:py-4 md:px-10 py-3 px-6 bg-secondary rounded-2xl text-gray-100 hover:bg-primary ">
-		<button className="useful-link cursor-copy ">
-			<span className="">Copy Email</span>
+<div class='mt-4 flex flex-row gap-4 md:mt-24 justify-center place-content center'>
+	<div class="md:py-4 md:px-10 py-3 px-6 bg-secondary rounded-2xl text-gray-100 hover:bg-primary ">
+		<button class="useful-link cursor-copy ">
+			<span class="">Copy Email</span>
 		</button>
 	</div>
 
-	<div className="md:py-4 md:px-10 py-3 px-6 bg-secondary rounded-2xl text-gray-100 hover:bg-primary ">
+	<div class="md:py-4 md:px-10 py-3 px-6 bg-secondary rounded-2xl text-gray-100 hover:bg-primary ">
 		<a href="/IsaiahAshtonKennyCurrentResume.pdf" download>Download Resume</a>
 	</div>
 
-	<div className="md:py-4 md:px-10  py-3 px-6 bg-secondary rounded-2xl text-gray-100 hover:bg-primary ">
+	<div class="md:py-4 md:px-10  py-3 px-6 bg-secondary rounded-2xl text-gray-100 hover:bg-primary ">
 		<a href="https://www.linkedin.com/in/isaiah-ashton-kenny" >LinkedIn</a>
 	</div>
 </div>
